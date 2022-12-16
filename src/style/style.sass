@@ -1,0 +1,144 @@
+html, body
+  margin: 0
+  color: white
+  background-color: #171717
+.top-wrapper
+  background-color: #101010
+  width: 100%
+  margin: 0
+  padding: 5rem 0
+.welcome
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  width: 50%
+  margin: auto
+  align-items: center
+  .left
+    display: flex
+    flex-direction: column
+    *
+      margin: 0
+      padding: 0
+    h1
+      font-size: 3rem
+      font-weight: 300
+      margin-bottom: 1rem
+    p
+        font-size: 1.2rem
+        font-weight: 300
+        margin-bottom: 1rem
+  .right
+    display: flex
+    flex-direction: column
+  .links
+    display: flex
+    flex-direction: row
+    gap: 1rem
+    a
+      text-decoration: none
+      color: white
+      font-size: 1.2rem
+      font-weight: 300
+      margin-bottom: 1rem
+      &:hover
+        color: #00bfff
+        transition: 0.3s
+        cursor: pointer
+.thumbnail
+  height: 500px
+  width: 100%
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
+
+
+main article
+  width: 65%
+  margin: auto
+
+article .small_image
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+article .small_image img
+  width: 60%
+  border: 1px solid #363636
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5)
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5)
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5)
+
+@keyframes moveAnimation
+  0%
+    bottom: 10px
+    opacity: 0
+  100%
+    bottom: 0
+    opacity: 1
+
+@keyframes moveAnimationInv
+  0%
+    bottom: 0
+    opacity: 0
+  100%
+    bottom: 10px
+    opacity: 1
+
+footer
+  display: flex
+  flex-direction: row
+  padding: 1em 2em
+  height: 6em
+  animation: moveAnimationInv ease-out 1s
+  animation-delay: 1s
+  animation-iteration-count: 1
+  animation-fill-mode: forwards
+  opacity: 0
+  align-items: center
+  justify-content: space-between
+
+  .footer-copyright
+    font-size: 14px !important
+    bottom: 0px
+    left: 2.6rem
+    color: darkgray
+    text-align: left
+    align-content: center
+    height: 1em
+    line-height: 1em
+  .footer-megalink
+    bottom: 40px
+    left: 2em
+    background: #1d1d1d
+    color: darkgray
+    border: none
+    border-radius: 25px
+    padding: 1em
+    &:hover
+      background: #2d2c2c
+
+div.blog-all
+  display: flex
+  flex-direction: row
+  width: 100%
+  flex-wrap: wrap
+  justify-content: left
+  article.blog-post-preview
+    display: flex
+    flex-direction: column
+    flex: 1 1 30%
+    max-width: 32.3%
+    img
+      width: 100%
+// this section is for syntax highlighting
+pre.language-undefined,
+pre.language-markup,
+pre.language-css,
+pre.language-sass,
+pre.language-scss,
+pre.language-shell,
+pre.language-javascript
+  background: #313131
+  padding: 1em
+
+pre.language-undefined .token, pre.language-shell .token
+  color: #d9d95d
