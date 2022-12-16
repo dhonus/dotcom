@@ -1,4 +1,4 @@
-<div class="top-wrapper">
+<div class="top-wrapper card">
   <div class="welcome">
     <div class="left">
       <h1>Daniel Honus</h1>
