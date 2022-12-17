@@ -4,6 +4,9 @@
   function getImageUrl(name) {
     return '/images/blog/thumbnails/'+ name;
   }
+  function getPrettyDate(date) {
+    return new Date(date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
 </script>
 
 <h1>Blog</h1>
@@ -11,13 +14,15 @@
 <div class="blog-all">
   {#each data.items as post}
     <article class="blog-post-preview">
-      <img src="{getImageUrl(post.meta.thumbnail)}" alt="{post.meta.title}" class="blog-image-preview">
+      <div class="intrinsic-preview" style="background-image: url('{getImageUrl(post.meta.thumbnail)}')">
+        <!--<img src="{getImageUrl(post.meta.thumbnail)}" alt="{post.meta.title}" class="blog-image-preview">-->
+      </div>
       <h2>
         <a href={post.path}>
           {post.meta.title}
         </a>
       </h2>
-      Published {post.meta.date}
+      Published {getPrettyDate(post.meta.date)}
     </article>
   {/each}
 </div>

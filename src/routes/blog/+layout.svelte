@@ -1,3 +1,5 @@
 <main>
-  <slot />
+  <article>
+    <slot />
+  </article>
 </main>
