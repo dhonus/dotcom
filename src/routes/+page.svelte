@@ -24,7 +24,7 @@
       <span class="p-indent">
         <p>My name is Daniel Honus and I am currently a student at
         VŠB - Technical University of Ostrava, finishing up my bachelor's degree in computer science.
-        I love my major, with particular interest in Linux, webdesign and scripting. Besides this I&nbsp;spend my time listening to music, or enjoying good book.
+        I love my major, with particular interest in Linux, webdesign and scripting. Besides this I&nbsp;spend my time listening to music or enjoying good book.
         </p><p>Things I've been excited about lately include Svelte, FreeBSD and Proxmox.
         I am comfortable using these technologies: Python, HTML, CSS, JavaScript/TypeScript, C++, Node.js, Wordpress and many others.
         I believe in a free and decentralized internet, simple (KISS) solutions, Free software and open standards.
