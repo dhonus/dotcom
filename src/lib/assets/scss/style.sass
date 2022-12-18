@@ -1,0 +1,438 @@
+html, body
+  margin: 0
+  color: gainsboro
+  background-color: rgb(26, 27, 28)
+  font-family: 'Comfortaa', sans-serif
+  a
+    color: white
+    &:hover
+      color: gainsboro
+      text-decoration: none
+  p
+    font-weight: 400
+    line-height: 1.3em
+.p-indent
+  p
+    text-indent: 30px
+.card
+  border-radius: 25px
+  overflow: hidden
+
+/* ANIMATIONS */
+@keyframes moveAnimation
+  0%
+    bottom: 10px
+    opacity: 0
+  100%
+    bottom: 0
+    opacity: 1
+
+@keyframes moveAnimationInv
+  0%
+    bottom: 0
+    opacity: 0
+  100%
+    bottom: 10px
+    opacity: 1
+
+
+
+.top-wrapper
+  width: 100%
+  margin: 0
+.welcome
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  gap: 2rem
+  align-items: center
+  border-top: 1px solid gainsboro
+  padding: 2em 0
+  .left
+    display: flex
+    flex-direction: column
+    h2, p
+      margin: 0
+      padding: 0
+    h1
+      //font-size: 3rem
+      font-weight: 300
+      margin-bottom: 1rem
+      margin-top: 0
+    p
+      font-size: 1.2rem
+      font-weight: 300
+      margin-bottom: 1rem
+      &.highlighted
+        background: #2a2a2a
+        padding: 1em
+
+  .right
+    display: flex
+    flex-direction: column
+    align-self: start
+    img
+      border-radius: 25px
+      border: 4px solid #853a51
+
+  .links
+    display: flex
+    flex-direction: row
+    gap: 1rem
+    a
+      text-decoration: none
+      color: white
+      font-size: 1.2rem
+      font-weight: 300
+      margin-bottom: 1rem
+      &:hover
+        color: #00bfff
+        transition: 0.3s
+        cursor: pointer
+.currently-working-on
+  display: flex
+  flex-direction: column
+  gap: .3rem
+  margin-bottom: 1rem
+  line-height: 1em
+  .left
+    display: flex
+    flex-direction: row
+    gap: 1rem
+  .right
+    display: flex
+    flex-direction: row
+    align-self: center
+  span
+    display: flex
+    align-items: center
+    gap: .5rem
+    img
+      transform: rotate(270deg)
+      transition: 0.3s ease-in-out all
+      &:hover
+        cursor: pointer
+    .overline
+      line-height: 1.7rem
+  #dropdown
+    width: 30px
+    height: 30px
+  .expand
+    height: 0
+    opacity: 0
+  .expanded
+    height: 100%
+    animation: moveAnimationInv ease-out 1s
+    animation-delay: .1s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+  .down-rotate
+    transform: rotate(360deg)
+    transition: 0.3s ease-in-out all
+.blog-dense
+  display: flex
+  flex-direction: column
+  gap: 1rem
+.main-wrapper
+  display: flex
+  flex-direction: column
+  .right-content
+    padding: 2rem
+    margin: 0 auto
+  .identity
+    h2
+      font-weight: 500
+      margin: 1rem 0 1rem 0
+    h2, a
+      color: white
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    p
+      font-weight: 300
+      margin: 0 0 1rem 0
+    img
+      border-radius: 25px
+      border: 2px solid #853a51
+      height: 3rem
+      width: auto
+
+  .topbar
+    display: flex
+    flex-direction: row
+    padding: 2rem
+    width: 50%
+    margin: auto
+  .vegan-burger
+    display: none
+    border: none
+  .navbar
+    display: flex
+    flex-direction: row
+    padding: 0 2rem
+    gap: 2rem
+    margin-top: 1rem
+    a
+      display: flex
+      align-items: center
+      gap: 1rem
+      text-decoration: none
+      color: whitesmoke
+      font-size: 1.2rem
+      font-weight: 300
+      margin-bottom: 1rem
+      position: relative
+      &:before, &.active:before
+        box-sizing: border-box
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 75%
+        height: 50%
+        opacity: 0.3
+        transform: scale3d(0,1,1)
+        transform-origin: 0% 50%
+        transition: transform 0.5s
+        transition-timing-function: cubic-bezier(0.2,1,0.3,1)
+      &:hover, &.active
+        cursor: pointer
+        &:before
+          transform: scale3d(1,1,1)
+          transition: transform 0.5s
+          transition-timing-function: cubic-bezier(0.2,1,0.3,1)
+      &:nth-of-type(1):before
+        background: #fe628e
+      &:nth-of-type(2):before
+        background: #ff8d00
+      &:nth-of-type(3):before
+        background: #3b5998
+      &:nth-of-type(4):before
+        background: #603b98
+      &:nth-of-type(5):before
+        background: #3b9847
+      img
+        height: 1rem
+  .right-content
+    flex: 1
+.thumbnail
+  height: 600px
+  width: 100%
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
+
+.split
+  display: flex
+  flex-direction: row
+  div
+    flex: 1
+  .left
+    display: flex
+    flex-direction: column
+    gap: 0
+    flex: 3
+    h2
+      margin-top: 0
+    img
+      max-width: 60%
+      height: auto
+      padding: 0
+      margin: 0
+      display: block
+      vertical-align: bottom
+  .right
+    display: flex
+    flex-direction: column
+    gap: 0
+    flex: 2
+    img
+      max-width: 70%
+      height: auto
+      padding: 0
+      margin: 0
+      display: block
+      vertical-align: bottom
+
+  span
+    border-bottom: 1px solid silver
+    padding: 0
+
+main
+  width: 50%
+  margin: auto
+main article
+  margin: auto
+  width: 100%
+  h1
+    font-size: 2.5rem
+    font-weight: 500
+    margin-bottom: 1rem
+
+article .small_image
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+article .small_image img
+  width: 60%
+  border: 1px solid #363636
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5)
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5)
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5)
+
+.article-head
+  text-align: center
+  margin-bottom: 2rem
+footer
+  display: flex
+  flex-direction: row
+  padding: 4em 2em 0 2em
+  margin-bottom: 1rem
+  height: 4em
+  animation: moveAnimationInv ease-out 1s
+  animation-delay: 1s
+  animation-iteration-count: 1
+  animation-fill-mode: forwards
+  opacity: 0
+  align-items: center
+  justify-content: space-between
+
+  .footer-copyright
+    font-size: 14px !important
+    bottom: 0px
+    left: 2.6rem
+    color: darkgray
+    text-align: left
+    align-content: center
+    height: 1em
+    line-height: 1.3rem
+  .footer-megalink
+    bottom: 40px
+    left: 2em
+    background: #1d1d1d
+    color: darkgray
+    border: none
+    border-radius: 25px
+    padding: 1em
+    &:hover
+      background: #2d2c2c
+      cursor: pointer
+
+div.blog-all
+  display: flex
+  flex-direction: row
+  gap: 1rem
+  width: 100%
+  flex-wrap: wrap
+  justify-content: left
+  article.blog-post-preview
+    display: flex
+    flex-direction: column
+    flex: 1 1 30%
+    max-width: 32.3%
+    margin: 0
+    width: 300px
+    a
+      text-decoration: none
+      color: gainsboro
+      text-align: center
+      font-weight: 500
+      font-size: 0.8rem
+      letter-spacing: 0.1rem
+      margin: 0
+      text-transform: uppercase
+    .intrinsic-preview
+      overflow: hidden
+      display: flex
+      justify-content: center
+      aspect-ratio: 1 / 1
+      background-size: cover
+      background-repeat: no-repeat
+      background-position: center
+      opacity: 1
+      transition: opacity .3s ease-in-out
+      &:hover
+        opacity: .7
+        transition: opacity .2s ease-in-out
+
+.overline
+  position: relative
+  &:before
+    content: ''
+    display: block
+    width: 2rem
+    height: 5px
+    background: #ce5f82
+    margin-top: 1.3rem
+    margin-bottom: .4rem
+
+
+code
+  font-size: 1rem
+// this section is for syntax highlighting
+pre.language-undefined,
+pre.language-markup,
+pre.language-css,
+pre.language-sass,
+pre.language-scss,
+pre.language-shell,
+pre.language-javascript
+  background: #2a2a2a
+  padding: 1em
+
+pre.language-undefined .token, pre.language-shell .token
+  color: #d9d95d
+
+@media screen and (max-width: 1920px)
+  main, .main-wrapper .topbar
+    width: 75%
+
+// media queries
+@media screen and (max-width: 1100px)
+  body
+    padding: 1rem
+  footer
+    flex-direction: column
+    height: 12rem
+  .main-wrapper
+    .topbar
+      flex-direction: column
+      width: 90%
+      padding: 0 2em
+      .identity
+        display: flex
+        gap: 2rem
+        justify-content: space-between
+      .vegan-burger
+        display: block
+        border: 0px solid transparent
+      .navbar
+        display: none
+        flex-wrap: wrap
+        opacity: 0
+        a
+          margin: 0 10%
+          font-size: 2.2rem
+      .relevant
+        display: flex
+        flex-direction: column
+        position: absolute
+        background: #1a1b1c
+        width: 100%
+        height: 100%
+        padding: 0
+        margin: 0
+        left: 0
+        top: 6em
+        z-index: 100
+        gap: 3rem
+        animation: moveAnimationInv ease-out 1s
+        animation-delay: .1s
+        animation-iteration-count: 1
+        animation-fill-mode: forwards
+  main
+    width: 100%
+  .welcome
+    .left
+      width: 100%
+    .right
+      display: none
