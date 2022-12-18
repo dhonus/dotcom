@@ -17,8 +17,7 @@ const config = {
 		}
 	},
 	paths: {
-		// change below to your repo name
-		base: dev ? "" : "/dotcom",
+		base: process.env.NODE_ENV === "production" ? "/dotcom" : "",
 	},
 	target: "#svelte",
 	extensions: ['.svelte', '.md'],
