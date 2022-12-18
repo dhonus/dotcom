@@ -10,6 +10,7 @@
 </script>
 
 <h1>Blog</h1>
+<p>A collection of articles I wrote. I intend to populate this section more in the future.</p>
 
 <div class="blog-all">
   {#each data.items as post}

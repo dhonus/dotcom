@@ -1,7 +1,7 @@
 ---
 title: Useful NetBSD commands to get a working installation with DWM
 date: "2022-12-16"
-thumbnail: "bsd.png"
+thumbnail: "bsd.jpg"
 ---
 
 # Useful NetBSD commands to get working installation with DWM

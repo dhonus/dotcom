@@ -1,4 +1,4 @@
-export const fetchMarkdownPosts = async () => {
+export const fetchMarkdownPosts = async (limit: number) => {
   const allPostFiles = import.meta.glob('/src/routes/blog/**/*.md')
   const iterablePostFiles = Object.entries(allPostFiles)
 
@@ -13,6 +13,8 @@ export const fetchMarkdownPosts = async () => {
       }
     })
   )
-
+  if (limit > 0){
+    return allPosts.slice(0, limit)
+  }
   return allPosts
 }

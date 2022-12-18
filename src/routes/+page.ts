@@ -1,9 +1,7 @@
 /** @type {import('./$types').PageLoad} */
 export const load = async ({ fetch }:any) => {
-  const res = await fetch(`/api`);
-
+  const res = await fetch(`/api?limit=5`)
   const items = await res.json();
-  // turn item into array
 
   return {items};
 }

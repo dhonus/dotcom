@@ -14,9 +14,10 @@
 
 
 <article>
-  <h1>{title}</h1>
-
-  <p>Published: {getPrettyDate(date)}</p>
+  <div class="article-head">
+    <h1>{title}</h1>
+    <p>Published: {getPrettyDate(date)}</p>
+  </div>
   <a href="{thumb}">
     <div class="thumbnail" style="
     background: url({thumb});

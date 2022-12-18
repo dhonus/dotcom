@@ -46,6 +46,8 @@ html, body
   justify-content: space-between
   gap: 2rem
   align-items: center
+  border-top: 1px solid gainsboro
+  padding: 2em 0
   .left
     display: flex
     flex-direction: column
@@ -56,6 +58,7 @@ html, body
       font-size: 3rem
       font-weight: 300
       margin-bottom: 1rem
+      margin-top: 0
     p
         font-size: 1.2rem
         font-weight: 300
@@ -154,7 +157,7 @@ html, body
     display: flex
     flex-direction: row
     padding: 2rem
-    width: 60%
+    width: 50%
     margin: auto
   .vegan-burger
     display: none
@@ -168,20 +171,14 @@ html, body
     a
       display: flex
       align-items: center
-      gap: 1.3rem
+      gap: 1rem
       text-decoration: none
       color: whitesmoke
       font-size: 1.2rem
       font-weight: 300
       margin-bottom: 1rem
       position: relative
-      &:hover
-          cursor: pointer
-          &:before
-            transform: scale3d(1,1,1)
-            transition: transform 0.5s
-            transition-timing-function: cubic-bezier(0.2,1,0.3,1)
-      &:before
+      &:before, &.active:before
         box-sizing: border-box
         content: ''
         position: absolute
@@ -194,6 +191,12 @@ html, body
         transform-origin: 0% 50%
         transition: transform 0.5s
         transition-timing-function: cubic-bezier(0.2,1,0.3,1)
+      &:hover, &.active
+        cursor: pointer
+        &:before
+          transform: scale3d(1,1,1)
+          transition: transform 0.5s
+          transition-timing-function: cubic-bezier(0.2,1,0.3,1)
       &:nth-of-type(1):before
         background: #fe628e
       &:nth-of-type(2):before
@@ -250,7 +253,7 @@ html, body
     padding: 0
 
 main
-  width: 60%
+  width: 50%
   margin: auto
 main article
   margin: auto
@@ -272,6 +275,9 @@ article .small_image img
   -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5)
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.5)
 
+.article-head
+  text-align: center
+  margin-bottom: 2rem
 footer
   display: flex
   flex-direction: row
@@ -341,7 +347,7 @@ div.blog-all
       opacity: 1
       transition: opacity .3s ease-in-out
       &:hover
-        opacity: .8
+        opacity: .7
         transition: opacity .2s ease-in-out
 
 .overline
@@ -369,6 +375,9 @@ pre.language-javascript
 pre.language-undefined .token, pre.language-shell .token
   color: #d9d95d
 
+@media screen and (max-width: 1920px)
+  main, .main-wrapper .topbar
+    width: 75%
 
 // media queries
 @media screen and (max-width: 1100px)
@@ -396,7 +405,7 @@ pre.language-undefined .token, pre.language-shell .token
         a
           margin: 0 10%
           font-size: 2.2rem
-      .active
+      .relevant
         display: flex
         flex-direction: column
         position: absolute

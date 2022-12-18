@@ -20,7 +20,7 @@
 <div class="top-wrapper">
   <div class="welcome">
     <div class="left">
-      <h1><span style="font-weight: 700">/* Welcome */</span></h1>
+      <h1><span style="font-weight: 700">// Welcome!</span></h1>
       <span class="p-indent">
         <p>My name is Daniel Honus and I am currently a student at
         VŠB - Technical University of Ostrava, finishing up my bachelor's degree in computer science.
