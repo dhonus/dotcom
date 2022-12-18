@@ -1,12 +1,12 @@
 html, body
   margin: 0
-  color: white
-  background-color: #171717
+  color: gainsboro
+  background-color: rgb(26, 27, 28)
   font-family: 'Comfortaa', sans-serif
   a
-    color: #ce5f82
+    color: white
     &:hover
-      color: #9a4761
+      color: gainsboro
       text-decoration: none
   p
     font-weight: 400
@@ -45,8 +45,6 @@ html, body
   flex-direction: row
   justify-content: space-between
   gap: 2rem
-  width: 90%
-  margin: auto
   align-items: center
   .left
     display: flex
@@ -66,6 +64,10 @@ html, body
     display: flex
     flex-direction: column
     align-self: start
+    img
+      border-radius: 25px
+      border: 4px solid #853a51
+
   .links
     display: flex
     flex-direction: row
@@ -126,10 +128,9 @@ html, body
   gap: 1rem
 .main-wrapper
   display: flex
-  flex-direction: row
+  flex-direction: column
   .right-content
     padding: 2rem
-    width: 65%
     margin: 0 auto
   .identity
     h2
@@ -145,15 +146,24 @@ html, body
       margin: 0 0 1rem 0
     img
       border-radius: 25px
-      border: 4px solid #853a51
+      border: 2px solid #853a51
+      height: 3rem
+      width: auto
 
-  .sidebar
+  .topbar
+    display: flex
+    flex-direction: row
     padding: 2rem
+    width: 60%
+    margin: auto
+  .vegan-burger
+    display: none
+    border: none
   .navbar
     display: flex
-    flex-direction: column
+    flex-direction: row
     padding: 0 2rem
-    gap: .5rem
+    gap: 2rem
     margin-top: 1rem
     a
       display: flex
@@ -199,7 +209,7 @@ html, body
   .right-content
     flex: 1
 .thumbnail
-  height: 500px
+  height: 600px
   width: 100%
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
 
@@ -239,9 +249,12 @@ html, body
     border-bottom: 1px solid silver
     padding: 0
 
-main article
-  width: 65%
+main
+  width: 60%
   margin: auto
+main article
+  margin: auto
+  width: 100%
   h1
     font-size: 2.5rem
     font-weight: 500
@@ -262,7 +275,7 @@ article .small_image img
 footer
   display: flex
   flex-direction: row
-  padding: 1em 2em
+  padding: 4em 2em 0 2em
   margin-bottom: 1rem
   height: 4em
   animation: moveAnimationInv ease-out 1s
@@ -297,6 +310,7 @@ footer
 div.blog-all
   display: flex
   flex-direction: row
+  gap: 1rem
   width: 100%
   flex-wrap: wrap
   justify-content: left
@@ -305,8 +319,17 @@ div.blog-all
     flex-direction: column
     flex: 1 1 30%
     max-width: 32.3%
-    margin: 1em
+    margin: 0
     width: 300px
+    a
+      text-decoration: none
+      color: gainsboro
+      text-align: center
+      font-weight: 500
+      font-size: 0.8rem
+      letter-spacing: 0.1rem
+      margin: 0
+      text-transform: uppercase
     .intrinsic-preview
       overflow: hidden
       display: flex
@@ -315,6 +338,11 @@ div.blog-all
       background-size: cover
       background-repeat: no-repeat
       background-position: center
+      opacity: 1
+      transition: opacity .3s ease-in-out
+      &:hover
+        opacity: .8
+        transition: opacity .2s ease-in-out
 
 .overline
   position: relative
@@ -340,3 +368,55 @@ pre.language-javascript
 
 pre.language-undefined .token, pre.language-shell .token
   color: #d9d95d
+
+
+// media queries
+@media screen and (max-width: 1100px)
+  body
+    padding: 1rem
+  footer
+    flex-direction: column
+    height: 12rem
+  .main-wrapper
+    .topbar
+      flex-direction: column
+      width: 90%
+      padding: 0 2em
+      .identity
+        display: flex
+        gap: 2rem
+        justify-content: space-between
+      .vegan-burger
+        display: block
+        border: 0px solid transparent
+      .navbar
+        display: none
+        flex-wrap: wrap
+        opacity: 0
+        a
+          margin: 0 10%
+          font-size: 2.2rem
+      .active
+        display: flex
+        flex-direction: column
+        position: absolute
+        background: #1a1b1c
+        width: 100%
+        height: 100%
+        padding: 0
+        margin: 0
+        left: 0
+        top: 6em
+        z-index: 100
+        gap: 3rem
+        animation: moveAnimationInv ease-out 1s
+        animation-delay: .1s
+        animation-iteration-count: 1
+        animation-fill-mode: forwards
+  main
+    width: 100%
+  .welcome
+    .left
+      width: 100%
+    .right
+      display: none

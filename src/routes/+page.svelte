@@ -17,13 +17,15 @@
 
   }
 </script>
-<div class="top-wrapper card">
+<div class="top-wrapper">
   <div class="welcome">
     <div class="left">
-      <h1><span style="font-weight: 700">// Daniel</span> Honus</h1>
+      <h1><span style="font-weight: 700">/* Welcome */</span></h1>
       <span class="p-indent">
-        <p>I am currently finishing up my bachelor's degree, studying computer science at
-        VŠB - Technical University of Ostrava. I am interested in linux, webdesign, music and literature. Things I've been excited about lately include Svelte, FreeBSD and virtualization.</p>
+        <p>My name is Daniel Honus and I am currently a student at
+        VŠB - Technical University of Ostrava, finishing up my bachelor's degree in computer science.
+        I love my major, with particular interest in Linux, Free software, webdesign and scripting. Besides this I&nbsp;also love music and literature. Things I've been excited about lately include Svelte, FreeBSD and Proxmox.
+        This is my personal website where I document my projects and other things I find interesting. I hope you enjoy your stay!</p>
         <p>
           If you are interested in working with me or simply want to say hi, feel free to contact me at <a href="mailto:hello@danielhonus.com">hello@danielhonus.com</a> (CZ/EN).
         </p>
@@ -57,6 +59,8 @@
         <a href="/blog">Read all</a>
       </div>
     </div>
-
+    <div class="right">
+      <img src="/images/profile.png" alt="Daniel Honus" width="200" height="200" />
+    </div>
   </div>
 </div>
