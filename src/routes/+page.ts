@@ -5,3 +5,4 @@ export const load = async ({ fetch }:any) => {
 
   return {items};
 }
+export const prerender = true
