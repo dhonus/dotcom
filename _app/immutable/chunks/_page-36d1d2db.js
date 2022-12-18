@@ -1,0 +1,1 @@
+const t=async({fetch:e})=>({items:await(await e("/api?limit=5")).json()}),s=!0,a=Object.freeze(Object.defineProperty({__proto__:null,load:t,prerender:!0},Symbol.toStringTag,{value:"Module"}));export{a as _,t as l,s as p};
