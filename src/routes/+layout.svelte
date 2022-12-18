@@ -21,7 +21,7 @@
       <a href="/" class:active={$page.url.pathname === '/'} on:click={svelteDoesntReload}><img src="/images/home-svgrepo-com.svg"/>Home</a>
       <a href="https://github.com/dhonus" target="_blank"><img src="/images/github-svgrepo-com.svg"/>Github</a>
       <a href="/portfolio" class:active={$page.url.pathname === '/portfolio'} on:click={svelteDoesntReload}><img src="/images/lamp-svgrepo-com.svg"/>Portfolio</a>
-      <a href="/about" class:active={$page.url.pathname === '/about'} on:click={svelteDoesntReload}><img src="/images/faq-svgrepo-com.svg"/>About me</a>
+      <!--<a href="/about" class:active={$page.url.pathname === '/about'} on:click={svelteDoesntReload}><img src="/images/faq-svgrepo-com.svg"/>About me</a>-->
       <a href="/blog" class:active={$page.url.pathname.includes('/blog')} on:click={svelteDoesntReload}><img src="/images/news-svgrepo-com.svg"/>Blog</a>
     </nav>
   </div>

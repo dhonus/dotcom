@@ -55,14 +55,18 @@ html, body
       margin: 0
       padding: 0
     h1
-      font-size: 3rem
+      //font-size: 3rem
       font-weight: 300
       margin-bottom: 1rem
       margin-top: 0
     p
-        font-size: 1.2rem
-        font-weight: 300
-        margin-bottom: 1rem
+      font-size: 1.2rem
+      font-weight: 300
+      margin-bottom: 1rem
+      &.highlighted
+        background: #2a2a2a
+        padding: 1em
+
   .right
     display: flex
     flex-direction: column
@@ -204,9 +208,9 @@ html, body
       &:nth-of-type(3):before
         background: #3b5998
       &:nth-of-type(4):before
-        background: #3b9847
-      &:nth-of-type(5):before
         background: #603b98
+      &:nth-of-type(5):before
+        background: #3b9847
       img
         height: 1rem
   .right-content
@@ -359,8 +363,11 @@ div.blog-all
     height: 5px
     background: #ce5f82
     margin-top: 1.3rem
-    margin-bottom: .3rem
+    margin-bottom: .4rem
 
+
+code
+  font-size: 1rem
 // this section is for syntax highlighting
 pre.language-undefined,
 pre.language-markup,
@@ -369,7 +376,7 @@ pre.language-sass,
 pre.language-scss,
 pre.language-shell,
 pre.language-javascript
-  background: #313131
+  background: #2a2a2a
   padding: 1em
 
 pre.language-undefined .token, pre.language-shell .token
