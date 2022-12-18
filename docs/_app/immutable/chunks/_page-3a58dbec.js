@@ -1,0 +1,1 @@
+const o=async({fetch:t})=>{const e=await(await t("/api?start=0&end=1")).json();return console.log(e),{items:e}},s=Object.freeze(Object.defineProperty({__proto__:null,load:o},Symbol.toStringTag,{value:"Module"}));export{s as _,o as l};
