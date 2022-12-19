@@ -1,5 +1,6 @@
 <script>
   import '$lib/assets/scss/style.sass'
+
   const current_year = new Date().getFullYear();
   export function mobileMenu() {
     document.getElementById("navbar").classList.toggle("relevant");
@@ -8,7 +9,6 @@
     document.getElementById("navbar").classList.remove("relevant");
   }
   import { page } from '$app/stores';
-
 </script>
 <div class="main-wrapper">
   <div class="topbar">
