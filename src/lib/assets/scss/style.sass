@@ -71,6 +71,7 @@ div.pretty-separator
         background: #252525
         padding: 1.3rem 2rem
         border-radius: 7px
+        margin: 1.7rem 0 1rem 0
 
   .right
     display: flex
@@ -175,7 +176,7 @@ div.pretty-separator
     img
       border-radius: 8px
       border: 3px solid #252525
-      height: 3rem
+      height: 4rem
       width: auto
       &:hover
         cursor: pointer
@@ -248,10 +249,25 @@ div.pretty-separator
   flex-direction: row
   div
     flex: 1
+  div.project
+    display: flex
+    flex-direction: column
+    padding: 1rem
+    border-radius: 7px
+    background: #1b1a1a
+    margin: 0.5rem
+    border: 1px solid #424040
+    flex: 0
+    cursor: pointer
+    &:hover
+      border: 1px solid #853a51
+      background: #222020
+      transition: 0.3s
+    h3.overline
+      margin: 0!important
   .left
     display: flex
     flex-direction: column
-    gap: 0
     flex: 3
     h2
       margin-top: 0
@@ -265,7 +281,6 @@ div.pretty-separator
   .right
     display: flex
     flex-direction: column
-    gap: 0
     flex: 2
     img
       max-width: 70%
@@ -308,9 +323,8 @@ article .small_image img
 footer
   display: flex
   flex-direction: row
-  padding: 4em 2em 0 2em
-  margin-bottom: 1rem
-  height: 4em
+  padding: 0 2em
+  margin-bottom: 2rem
   animation: moveAnimationInv ease-out 1s
   animation-delay: 1s
   animation-iteration-count: 1
@@ -318,15 +332,12 @@ footer
   opacity: 0
   align-items: center
   justify-content: space-between
-
   .footer-copyright
     font-size: 14px !important
-    bottom: 0px
     left: 2.6rem
     color: darkgray
     text-align: left
     align-content: center
-    height: 1em
     line-height: 1.3rem
   .footer-megalink
     bottom: 40px
@@ -334,7 +345,7 @@ footer
     background: #1d1d1d
     color: darkgray
     border: none
-    border-radius: 25px
+    border-radius: 8px
     padding: 1em
     &:hover
       background: #2d2c2c

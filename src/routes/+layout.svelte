@@ -14,7 +14,7 @@
   <div class="topbar">
     <div class="identity">
       <a href="/" title="Home">
-        <img src="/images/profile.png" alt="Daniel Honus" width="200" height="200" />
+        <img src="/images/me.jpg" alt="Daniel Honus" width="200" height="200" />
       </a>
       <img class="vegan-burger" on:click={mobileMenu} src="/images/vegan-burder-menu-svgrepo-com.svg">
     </div>
@@ -31,8 +31,10 @@
   </main>
 </div>
 <footer>
-  <p class="footer-copyright">Copyright © 2018 – {current_year} Daniel Honus. <br>This website is free software licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" style="color:gray;">GNU GPLv3</a>.  Source code available on <a href="https://github.com/dhonus/dotcom" style="color:gray;">Github</a>.
-    Verbatim copying and redistribution of this entire page are permitted provided this copyright notice and license are preserved.</p>
+  <p class="footer-copyright">Copyright © 2018 – {current_year} Daniel Honus.
+    <br>This website is free software licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" style="color:gray;">GNU GPLv3</a>. Source code
+    available on <a href="https://github.com/dhonus/dotcom" style="color:gray;">Github</a>. <br>
+    Built with <a href="https://svelte.dev/" style="color:gray;">Svelte</a>. This site doesn't track you. ❤️</p>
   <a target="_blank" href="https://mega.nz/megadrop/BdiWVPiHPpo">
     <button class="footer-megalink">Send Me a File With MEGA</button>
   </a>

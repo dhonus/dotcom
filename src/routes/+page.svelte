@@ -20,20 +20,19 @@
 <div class="top-wrapper">
   <div class="welcome">
     <div class="left">
-      <h1><span style="font-weight: 700">// Welcome!</span></h1>
+      <h1><span style="font-weight: 700"><span style="color: #853a51;">//</span> Welcome!</span></h1>
       <span class="p-indent">
         <p>My name is Daniel Honus and I am currently a student at
         VŠB - Technical University of Ostrava, finishing up my bachelor's degree in computer science.
-        I love my major, with particular interest in Linux, webdesign and scripting. Besides this I&nbsp;spend my time listening to music or enjoying good book.
+        I love my major, with particular interest in Linux, webdesign and scripting. Besides this I&nbsp;spend my time listening to music or enjoying a good book.
         </p><p>Things I've been excited about lately include Svelte, FreeBSD and Proxmox.
-        I am comfortable using these technologies: Python, JavaScript/TypeScript, C++, Node.js/Vue.js/Svelte, Wordpress and many others.
+        I am comfortable using these technologies: Python, JavaScript/TypeScript, C++, Node.js / Vue.js / React / Svelte, Wordpress and many others.
         I believe in a free and decentralized internet, simple (KISS) solutions, Free software and open standards.
 
         </p><p>This is my personal website where I document my projects and other things I find interesting. I hope you enjoy your stay!</p>
         <p class="highlighted">
           If you are interested in working with me or simply want to say hi, feel free to contact me at <a href="mailto:hello@danielhonus.com">hello@danielhonus.com</a> (CZ/EN).
         </p>
-        <div class="pretty-separator"></div>
       </span>
       <div class="currently-working-on">
         <span>
@@ -65,8 +64,8 @@
       </div>
     </div>
     <div class="right">
-      <!--<img src="/images/profile.png" alt="Daniel Honus" width="200" height="200" />-->
-      <div class="me" style="background-image: url('/images/me.jpg');"></div>
+      <img src="/images/profile.png" alt="Daniel Honus" width="200" height="200" />
+      <!--<div class="me" style="background-image: url('/images/me.jpg');"></div>-->
     </div>
   </div>
 </div>

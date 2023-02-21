@@ -3,24 +3,38 @@
 
 <div class="split">
   <div class="left">
-    <h2 class="overline">Projects</h2>
-    <div>
+    <div class="project" onclick='location.href="https://radioostravan.cz"'>
       <h3 class="overline">Rádio Ostravan</h3>
-      <p>Website for a local radio station. I was responsible for the design and development of the website. Available at <a href="https://www.radioostravan.cz/" target="_blank">www.radioostravan.cz</a></p>
+      <p>Website for a local radio station. I was responsible for the design and development of the website.</p>
       <img src="/images/radost.png" alt="Rádio Ostravan">
     </div>
-    <div>
-      <h3 class="overline">BETONVET</h3>
-      <p>Website for an ERASMUS+ program, now deprecated because the project has concluded.</p>
-      <img src="/images/betonvet.png" alt="BETONVET">
+    <div class="project" onclick='location.href="https://betonvet.eu"'>
+    <h3 class="overline">BetonVET</h3>
+      <p>Website for an ERASMUS+ program. Currently being filled in by the staff responsible.</p>
+      <a href="https://betonvet.eu/">
+        <img src="/images/betonvet.png" alt="BETONVET">
+      </a>
+    </div>
+    <div class="project" onclick='location.href="https://github.com/dhonus/manga-pet"'>
+    <h3 class="overline">manga.pet.</h3>
+      <p>An electron application to download manga and send it via email to a kindle device.</p>
+      <img src="/images/mangapet.png" alt="manga.pet.">
     </div>
   </div>
   <div class="right">
-    <h2 class="overline">Work & School</h2>
-    <div>
-      <h3 class="overline">Bachelor's thesis</h3>
+    <div class="project" onclick='location.href="http://130.162.49.62:8080/"'>
+    <h3 class="overline">Bachelor's thesis</h3>
       <p>I am developing a P1 logic solver with Venn diagram visualization as a tool for my university.</p>
-      <img src="/images/thesis.png" alt="BETONVET">
+      <a href="http://130.162.49.62:8080/" target="_blank">
+        <img src="/images/thesis.png" alt="BETONVET" loading="lazy">
+      </a>
+    </div>
+    <div class="project" onclick='location.href="https://github.com/dhonus/password-manager"'>
+      <h3 class="overline">Password manager</h3>
+      <p>Simple password manager written in C++. It uses libsodium to handle encryption.</p>
+      <a href="https://github.com/dhonus/password-manager">
+        <img src="/images/passman.png" alt="Password manager">
+      </a>
     </div>
   </div>
 </div>
