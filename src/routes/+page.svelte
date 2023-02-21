@@ -28,7 +28,6 @@
         </p><p>Things I've been excited about lately include Svelte, FreeBSD and Proxmox.
         I am comfortable using these technologies: Python, JavaScript/TypeScript, C++, Node.js / Vue.js / React / Svelte, Wordpress and many others.
         I believe in a free and decentralized internet, simple (KISS) solutions, Free software and open standards.
-
         </p><p>This is my personal website where I document my projects and other things I find interesting. I&nbsp;hope you enjoy your stay!</p>
         <div class="highlighted">
           <h2 class="overline">Contact</h2>
