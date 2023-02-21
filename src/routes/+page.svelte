@@ -28,6 +28,7 @@
         </p><p>Things I've been excited about lately include Svelte, FreeBSD and Proxmox.
         I am comfortable using these technologies: Python, JavaScript/TypeScript, C++, Node.js / Vue.js / React / Svelte, Wordpress and many others.
         I believe in a free and decentralized internet, simple (KISS) solutions, Free software and open standards.
+
         </p><p>This is my personal website where I document my projects and other things I find interesting. I&nbsp;hope you enjoy your stay!</p>
         <div class="highlighted">
           <h2 class="overline">Contact</h2>
@@ -66,7 +67,7 @@
       </div>
     </div>
     <div class="right">
-      <img src="/images/flower.png" alt="Daniel Honus" width="250" title="Obligatory flower"/>
+      <img src="/images/moon.jpg" alt="Daniel Honus" width="200" height="200" title="A photo of the Moon I took"/>
       <!--<div class="me" style="background-image: url('/images/me.jpg');"></div>-->
     </div>
   </div>
