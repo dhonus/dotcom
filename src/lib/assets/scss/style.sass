@@ -87,12 +87,16 @@ div.pretty-separator
       margin-bottom: 1rem
     div.highlighted
       background: #1c1b1b
-      padding: 1.7rem 2rem
+      padding: 1.3rem 2rem 1.7rem 2rem
       border-radius: 7px
       margin: 1.7rem 0 1rem 0
       border: 1px solid #424040
       h2, p
         margin: 0!important
+      h2
+        margin-bottom: .6rem!important
+        &:after
+          background: #5884be
 
   .right
     display: flex
@@ -365,8 +369,8 @@ article .small_image img
 footer
   display: flex
   flex-direction: row
-  padding: 0 2rem
-  margin: 0 auto 1rem auto
+  padding: 1em 2em 0 2rem
+  margin: 0 auto
   background: #1c1c1c
 
   align-items: center
@@ -485,12 +489,10 @@ pre.language-undefined .token, pre.language-shell .token
   color: #d9d95d
 
 @media screen and (min-width: 2000px)
-  .main-wrapper, footer
+  .main-wrapper
     max-width: 60%
 
 @media screen and (max-width: 1100px)
-  body
-    padding: 1rem
   footer
     flex-direction: column
     height: 12rem
@@ -543,3 +545,11 @@ pre.language-undefined .token, pre.language-shell .token
       width: 100%
     .right
       display: none
+  .blog-all
+    article.blog-post-preview
+      flex: 1 1 50% !important
+      max-width: 47% !important
+      font-size: .6rem !important
+      h2
+        font-size: .8rem !important
+

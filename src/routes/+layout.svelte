@@ -33,8 +33,7 @@
 <footer>
   <p class="footer-copyright">Copyright © 2018 – {current_year} Daniel Honus.
     <br>This website is free software licensed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" style="color:gray;">GNU GPLv3</a>. Source code
-    available on <a href="https://github.com/dhonus/dotcom" style="color:gray;">Github</a>. <br>
-    Built with <a href="https://svelte.dev/" style="color:gray;">Svelte</a>. This site doesn't track you. ❤️</p>
+    available on <a href="https://github.com/dhonus/dotcom" style="color:gray;">Github</a>.</p>
   <a target="_blank" href="https://mega.nz/megadrop/BdiWVPiHPpo">
     <button class="footer-megalink">Send Me a File With MEGA</button>
   </a>

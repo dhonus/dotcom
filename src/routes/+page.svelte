@@ -31,6 +31,7 @@
 
         </p><p>This is my personal website where I document my projects and other things I find interesting. I&nbsp;hope you enjoy your stay!</p>
         <div class="highlighted">
+          <h2 class="overline">Contact</h2>
           <p>
             If you are interested in working with me or simply want to say hi, feel free to contact me at <a href="mailto:hello@danielhonus.com">hello@danielhonus.com</a> (CZ/EN).
           </p>
