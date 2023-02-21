@@ -29,10 +29,12 @@
         I am comfortable using these technologies: Python, JavaScript/TypeScript, C++, Node.js / Vue.js / React / Svelte, Wordpress and many others.
         I believe in a free and decentralized internet, simple (KISS) solutions, Free software and open standards.
 
-        </p><p>This is my personal website where I document my projects and other things I find interesting. I hope you enjoy your stay!</p>
-        <p class="highlighted">
-          If you are interested in working with me or simply want to say hi, feel free to contact me at <a href="mailto:hello@danielhonus.com">hello@danielhonus.com</a> (CZ/EN).
-        </p>
+        </p><p>This is my personal website where I document my projects and other things I find interesting. I&nbsp;hope you enjoy your stay!</p>
+        <div class="highlighted">
+          <p>
+            If you are interested in working with me or simply want to say hi, feel free to contact me at <a href="mailto:hello@danielhonus.com">hello@danielhonus.com</a> (CZ/EN).
+          </p>
+        </div>
       </span>
       <div class="currently-working-on">
         <span>

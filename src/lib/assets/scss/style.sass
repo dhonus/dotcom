@@ -34,6 +34,13 @@ html, body
   100%
     bottom: 10px
     opacity: 1
+@keyframes smoothIn
+  0%
+    top: 25px
+    opacity: 0
+  100%
+    top: 0
+    opacity: 1
 
 div.pretty-separator
   position: relative
@@ -44,6 +51,12 @@ div.pretty-separator
 
 .top-wrapper
   width: 100%
+  animation: smoothIn ease-out 1s
+  animation-delay: .2s
+  animation-iteration-count: 1
+  animation-fill-mode: forwards
+  position: relative
+  opacity: 0
 .welcome
   display: flex
   flex-direction: row
@@ -51,6 +64,8 @@ div.pretty-separator
   gap: 2rem
   align-items: center
   padding: 1rem 0
+  article
+    animation-duration: 0s
   .left
     display: flex
     flex-direction: column
@@ -67,11 +82,13 @@ div.pretty-separator
       font-size: 1.2rem
       font-weight: 300
       margin-bottom: 1rem
-      &.highlighted
-        background: #252525
-        padding: 1.3rem 2rem
-        border-radius: 7px
-        margin: 1.7rem 0 1rem 0
+    div.highlighted
+      background: #252525
+      padding: 1.7rem 2rem
+      border-radius: 7px
+      margin: 1.7rem 0 1rem 0
+      h2, p
+        margin: 0!important
 
   .right
     display: flex
@@ -259,6 +276,26 @@ div.pretty-separator
     border: 1px solid #424040
     flex: 0
     cursor: pointer
+    animation: smoothIn ease-out 1s
+    animation-delay: .9s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+    position: relative
+    opacity: 0
+    &:nth-of-type(1)
+      animation-delay: 0s
+    &:nth-of-type(2)
+      animation-delay: .3s
+    &:nth-of-type(3)
+      animation-delay: .6s
+    &:nth-of-type(4)
+      animation-delay: .9s
+    &:nth-of-type(5)
+      animation-delay: 1.2s
+    &:nth-of-type(6)
+      animation-delay: 1.5s
+    &:nth-of-type(7)
+      animation-delay: 1.8s
     &:hover
       border: 1px solid #853a51
       background: #222020
@@ -300,6 +337,11 @@ main
 main article
   margin: auto
   width: 100%
+  animation: smoothIn ease-out 1s
+  animation-iteration-count: 1
+  animation-fill-mode: forwards
+  position: relative
+  opacity: 0
   h1
     font-size: 2.5rem
     font-weight: 500
@@ -324,7 +366,7 @@ footer
   display: flex
   flex-direction: row
   padding: 0 2em
-  margin-bottom: 2rem
+  margin-bottom: 1rem
   animation: moveAnimationInv ease-out 1s
   animation-delay: 1s
   animation-iteration-count: 1
@@ -365,6 +407,26 @@ div.blog-all
     max-width: 32.3%
     margin: 0
     width: 300px
+    animation: smoothIn ease-out 1s
+    animation-delay: .9s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+    position: relative
+    opacity: 0
+    &:nth-of-type(1)
+      animation-delay: 0s
+    &:nth-of-type(2)
+      animation-delay: .3s
+    &:nth-of-type(3)
+      animation-delay: .6s
+    &:nth-of-type(4)
+      animation-delay: .9s
+    &:nth-of-type(5)
+      animation-delay: 1.2s
+    &:nth-of-type(6)
+      animation-delay: 1.5s
+    &:nth-of-type(7)
+      animation-delay: 1.8s
     a
       text-decoration: none
       color: gainsboro
