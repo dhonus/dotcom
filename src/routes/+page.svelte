@@ -67,7 +67,7 @@
       </div>
     </div>
     <div class="right">
-      <img src="/images/profile.png" alt="Daniel Honus" width="200" height="200" />
+      <img src="/images/flower.png" alt="Daniel Honus" width="250" title="Obligatory flower"/>
       <!--<div class="me" style="background-image: url('/images/me.jpg');"></div>-->
     </div>
   </div>
