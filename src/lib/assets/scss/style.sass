@@ -1,8 +1,11 @@
 html, body
   margin: 0
   color: gainsboro
-  background-color: #151414
+  background-color: #1c1c1c
   font-family: 'Comfortaa', sans-serif
+body
+  margin: 1rem 0
+  background-color: #151414
   a
     color: white
     &:hover
@@ -51,7 +54,7 @@ div.pretty-separator
 
 .top-wrapper
   width: 100%
-  animation: smoothIn ease-out 1s
+  animation: smoothIn ease-out .5s
   animation-delay: .2s
   animation-iteration-count: 1
   animation-fill-mode: forwards
@@ -83,10 +86,11 @@ div.pretty-separator
       font-weight: 300
       margin-bottom: 1rem
     div.highlighted
-      background: #252525
+      background: #1c1b1b
       padding: 1.7rem 2rem
       border-radius: 7px
       margin: 1.7rem 0 1rem 0
+      border: 1px solid #424040
       h2, p
         margin: 0!important
 
@@ -102,11 +106,9 @@ div.pretty-separator
       background-size: cover
       border-radius: 25px
       border: 5px solid #252525
-
     img
       border-radius: 25px
-      border: 4px solid #853a51
-
+      border: 5px solid #252525
   .links
     display: flex
     flex-direction: row
@@ -189,7 +191,6 @@ div.pretty-separator
       gap: .6rem
       &:hover
         text-decoration: underline
-
     img
       border-radius: 8px
       border: 3px solid #252525
@@ -199,7 +200,6 @@ div.pretty-separator
         cursor: pointer
         border: 3px solid #853a51
         transition: 0.3s
-
   .topbar
     display: flex
     flex-direction: column
@@ -276,7 +276,7 @@ div.pretty-separator
     border: 1px solid #424040
     flex: 0
     cursor: pointer
-    animation: smoothIn ease-out 1s
+    animation: smoothIn ease-out .5s
     animation-delay: .9s
     animation-iteration-count: 1
     animation-fill-mode: forwards
@@ -337,7 +337,7 @@ main
 main article
   margin: auto
   width: 100%
-  animation: smoothIn ease-out 1s
+  animation: smoothIn ease-out .5s
   animation-iteration-count: 1
   animation-fill-mode: forwards
   position: relative
@@ -365,13 +365,10 @@ article .small_image img
 footer
   display: flex
   flex-direction: row
-  padding: 0 2em
-  margin-bottom: 1rem
-  animation: moveAnimationInv ease-out 1s
-  animation-delay: 1s
-  animation-iteration-count: 1
-  animation-fill-mode: forwards
-  opacity: 0
+  padding: 0 2rem
+  margin: 0 auto 1rem auto
+  background: #1c1c1c
+
   align-items: center
   justify-content: space-between
   .footer-copyright
@@ -386,7 +383,7 @@ footer
     left: 2em
     background: #1d1d1d
     color: darkgray
-    border: none
+    border: 1px solid #424040
     border-radius: 8px
     padding: 1em
     &:hover
@@ -407,7 +404,7 @@ div.blog-all
     max-width: 32.3%
     margin: 0
     width: 300px
-    animation: smoothIn ease-out 1s
+    animation: smoothIn ease-out .5s
     animation-delay: .9s
     animation-iteration-count: 1
     animation-fill-mode: forwards
@@ -471,8 +468,6 @@ div.blog-all
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1)
     z-index: -1
 
-
-
 code
   font-size: 1rem
 // this section is for syntax highlighting
@@ -489,8 +484,10 @@ pre.language-javascript
 pre.language-undefined .token, pre.language-shell .token
   color: #d9d95d
 
-@media screen and (max-width: 1920px)
-// media queries
+@media screen and (min-width: 2000px)
+  .main-wrapper, footer
+    max-width: 60%
+
 @media screen and (max-width: 1100px)
   body
     padding: 1rem
@@ -498,6 +495,7 @@ pre.language-undefined .token, pre.language-shell .token
     flex-direction: column
     height: 12rem
   .main-wrapper
+    flex-direction: column
     .topbar
       flex-direction: column
       padding: 0 2em
@@ -508,6 +506,8 @@ pre.language-undefined .token, pre.language-shell .token
       .vegan-burger
         display: block
         border: 0px solid transparent
+        &:hover
+          border: 0px solid transparent
       .navbar
         display: none
         flex-wrap: wrap
@@ -519,17 +519,21 @@ pre.language-undefined .token, pre.language-shell .token
         display: flex
         flex-direction: column
         position: absolute
-        background: #1a1b1c
+        background: #151414
         width: 100%
         height: 100%
-        padding: 0
+        padding: 2rem 0
         margin: 0
         left: 0
-        top: 6em
+        top: 7em
         z-index: 100
         gap: 3rem
         animation: moveAnimationInv ease-out 1s
-        animation-delay: .1s
+        animation-delay: 0s
+        animation-iteration-count: 1
+        animation-fill-mode: none
+        animation-delay: 0.1s
+        animation-duration: .3s
         animation-iteration-count: 1
         animation-fill-mode: forwards
   main
