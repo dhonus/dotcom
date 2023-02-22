@@ -85,19 +85,6 @@ div.pretty-separator
       font-size: 1.2rem
       font-weight: 300
       margin-bottom: 1rem
-    div.highlighted
-      background: #1c1b1b
-      padding: 1.3rem 2rem 1.7rem 2rem
-      border-radius: 7px
-      margin: 1.7rem 0 1rem 0
-      border: 1px solid #424040
-      h2, p
-        margin: 0!important
-      h2
-        margin-bottom: .6rem!important
-        &:after
-          background: #5884be
-
   .right
     display: flex
     flex-direction: column
@@ -168,10 +155,6 @@ div.pretty-separator
   .down-rotate
     transform: rotate(360deg)
     transition: 0.3s ease-in-out all
-.blog-dense
-  display: flex
-  flex-direction: column
-  gap: 1rem
 .main-wrapper
   display: flex
   flex-direction: row
@@ -277,7 +260,7 @@ div.pretty-separator
     border-radius: 7px
     background: #1b1a1a
     margin: 0.5rem
-    border: 1px solid #424040
+    border: 1px solid #1b1a1a
     flex: 0
     cursor: pointer
     animation: smoothIn ease-out .5s
@@ -287,22 +270,22 @@ div.pretty-separator
     position: relative
     opacity: 0
     &:nth-of-type(1)
-      animation-delay: 0s
-    &:nth-of-type(2)
       animation-delay: .3s
-    &:nth-of-type(3)
+    &:nth-of-type(2)
       animation-delay: .6s
-    &:nth-of-type(4)
+    &:nth-of-type(3)
       animation-delay: .9s
-    &:nth-of-type(5)
+    &:nth-of-type(4)
       animation-delay: 1.2s
+    &:nth-of-type(5)
+      animation-delay: 1.5s
     &:nth-of-type(6)
       animation-delay: 1.5s
     &:nth-of-type(7)
       animation-delay: 1.8s
     &:hover
-      border: 1px solid #853a51
-      background: #222020
+      border: 1px solid #222020
+      background: #1d1a1b
       transition: 0.3s
     h3.overline
       margin: 0!important
@@ -372,7 +355,6 @@ footer
   padding: 1em 2em 0 2rem
   margin: 0 auto
   background: #1c1c1c
-
   align-items: center
   justify-content: space-between
   .footer-copyright
@@ -487,6 +469,16 @@ pre.language-javascript
 
 pre.language-undefined .token, pre.language-shell .token
   color: #d9d95d
+
+.content.svelte-n7cvum
+  background: #1c1c1c
+  border-radius: 7px
+  overflow: hidden
+  h2
+    margin: 0.3rem!important
+.window.svelte-n7cvum
+  background: transparent!important
+  border: none
 
 @media screen and (min-width: 2000px)
   .main-wrapper

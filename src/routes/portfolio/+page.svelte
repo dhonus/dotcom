@@ -1,6 +1,55 @@
+<script>
+  // event listener on cick
+  export function handleClick() {
+    let expand = document.getElementById("expand");
+    let downRotate = document.getElementById("dropdown");
+    if (expand.classList.contains("expanded")){
+      expand.classList.remove("expanded");
+      downRotate.classList.remove("down-rotate");
+      return;
+    }
+    expand.classList.add("expanded");
+    downRotate.classList.add("down-rotate");
+  }
+</script>
+<style>
+  .project:first-of-type {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      border-radius: 7px;
+      background: #1b1a1a;
+      margin: 0.5rem;
+      border: 1px solid #424040;
+      flex: 0;
+      cursor: pointer;
+      animation: smoothIn ease-out .5s;
+      animation-delay: .0s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      position: relative;
+      opacity: 0;
+  }
+</style>
 <h1>Code and projects</h1>
 <p>A collection of projects I have done. Some UI/UX design, school projects and shell scripts.</p>
-
+<p>
+  I am comfortable using these technologies: Python, JavaScript/TypeScript, C++, Node.js / Vue.js / React / Svelte, Wordpress and many others.
+</p>
+  <div class="currently-working-on project">
+  <span>
+    <div class="left">
+      <div>
+        <h2 class="overline">Currently working on</h2>
+        <p>Website for an orthodontic clinic</p>
+      </div>
+      <div class="right">
+        <img id="dropdown" src="/images/down-arrow-svgrepo-com.svg" on:click={handleClick}>
+      </div>
+    </div>
+  </span>
+  <img src="/images/dentist.png" alt="Orthodontist" style="width: 500px" id="expand" class="expand"/>
+</div>
 <div class="split">
   <div class="left">
     <div class="project" onclick='location.href="https://radioostravan.cz"'>
