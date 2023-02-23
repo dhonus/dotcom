@@ -4,6 +4,7 @@
   }
   p, h2 {
     color: whitesmoke;
+    margin-bottom: 0!important;
   }
 </style>
 <div class="modal">

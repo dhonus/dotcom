@@ -9,7 +9,34 @@
     document.getElementById("navbar").classList.remove("relevant");
   }
   import { page } from '$app/stores';
+
+  import { writable } from 'svelte/store';
+  import Modal from 'svelte-simple-modal';
+  import Popup from './modal.svelte';
+  const modal = writable(null);
+  const showModal = () => modal.set(Popup);
 </script>
+<style>
+  .modal-wrapper {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+  }
+  .modal-wrapper button{
+      background-color: transparent;
+      color: white;
+      border: 2px solid #853a51;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: "Comfortaa", sans-serif;
+  }
+  .modal-wrapper button:hover{
+      background-color: #853a51;
+      color: white;
+  }
+</style>
 <div class="main-wrapper">
   <div class="topbar">
     <div class="identity">
@@ -25,6 +52,11 @@
       <!--<a href="/about" class:active={$page.url.pathname === '/about'} on:click={svelteDoesntReload}><img src="/images/faq-svgrepo-com.svg"/>About me</a>-->
       <a href="/blog" class:active={$page.url.pathname.includes('/blog')} on:click={svelteDoesntReload}><img src="/images/news-svgrepo-com.svg"/>Blog</a>
     </nav>
+    <div class="modal-wrapper">
+      <Modal show={$modal}>
+        <button class="modal-button" on:click={showModal}>Contact me</button>
+      </Modal>
+    </div>
   </div>
   <main>
     <slot></slot>
@@ -38,4 +70,8 @@
     <button class="footer-megalink">Send Me a File With MEGA</button>
   </a>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400;1,500;1,700&family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
 </footer>
