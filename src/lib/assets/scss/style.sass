@@ -4,7 +4,7 @@ html, body
   background-color: #1c1c1c
   font-family: 'Comfortaa', sans-serif
 body
-  margin: 1rem 0
+  margin: 1rem
   background-color: #151414
   a
     color: white
@@ -44,13 +44,6 @@ body
   100%
     top: 0
     opacity: 1
-
-div.pretty-separator
-  position: relative
-  height: 2px
-  width: 100%
-  background: #a3a3a3
-  margin: 1rem auto
 
 .top-wrapper
   width: 100%
@@ -97,9 +90,6 @@ div.pretty-separator
       background-size: cover
       border-radius: 25px
       border: 5px solid #252525
-    img
-      //border-radius: 25px
-      //border: 5px solid #252525
   .links
     display: flex
     flex-direction: row
@@ -183,6 +173,11 @@ div.pretty-separator
       border: 3px solid #252525
       height: 4rem
       width: auto
+      animation: smoothIn ease-out .5s
+      animation-iteration-count: 1
+      animation-fill-mode: forwards
+      animation-delay: .2s
+      opacity: 0
       &:hover
         cursor: pointer
         border: 3px solid #853a51
@@ -191,6 +186,11 @@ div.pretty-separator
     display: flex
     flex-direction: column
     padding: 1rem 2rem
+    animation: smoothIn ease-out .5s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+    animation-delay: .2s
+    opacity: 0
   .vegan-burger
     display: none
     border: none
@@ -254,21 +254,6 @@ div.pretty-separator
   div
     flex: 1
   div.project
-    display: flex
-    flex-direction: column
-    padding: 1rem
-    border-radius: 7px
-    background: #1b1a1a
-    margin: 0.5rem
-    border: 1px solid #1b1a1a
-    flex: 0
-    cursor: pointer
-    animation: smoothIn ease-out .5s
-    animation-delay: .9s
-    animation-iteration-count: 1
-    animation-fill-mode: forwards
-    position: relative
-    opacity: 0
     &:nth-of-type(1)
       animation-delay: .3s
     &:nth-of-type(2)
@@ -289,6 +274,9 @@ div.pretty-separator
       transition: 0.3s
     h3.overline
       margin: 0!important
+    a
+      text-decoration: none
+
   .left
     display: flex
     flex-direction: column
@@ -321,6 +309,7 @@ div.pretty-separator
 main
   flex: 1
   padding: 0 3rem 2rem 0
+  animation: smoothIn ease-out .5s
 main article
   margin: auto
   width: 100%
@@ -450,7 +439,6 @@ div.blog-all
     height: 50%
     transform: scale3d(1, 1, 1)
     transition: transform 0.5s
-    transition-timing-function: ease
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1)
     z-index: -1
 
@@ -523,12 +511,9 @@ pre.language-undefined .token, pre.language-shell .token
         z-index: 100
         gap: 3rem
         animation: moveAnimationInv ease-out 1s
-        animation-delay: 0s
         animation-iteration-count: 1
-        animation-fill-mode: none
         animation-delay: 0.1s
         animation-duration: .3s
-        animation-iteration-count: 1
         animation-fill-mode: forwards
   main
     width: 100%

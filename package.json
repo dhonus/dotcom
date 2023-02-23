@@ -24,7 +24,7 @@
 		"remark-html": "^15.0.1",
 		"rollup": "^3.7.4",
 		"rollup-plugin-svelte": "^7.1.0",
-		"sass": "^1.56.2",
+		"sass": "^1.58.3",
 		"svelte": "^3.54.0",
 		"svelte-check": "^2.9.2",
 		"svelte-preprocess": "^5.0.0",
