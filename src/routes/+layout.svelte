@@ -41,7 +41,7 @@
   <div class="topbar">
     <div class="identity">
       <a href="/" title="Home">
-        <img src="/images/me.jpg" alt="Daniel Honus" width="200" height="200" />
+        <img src="https://avatars.githubusercontent.com/u/22010510" alt="Daniel Honus" width="200" height="200" />
       </a>
       <img class="vegan-burger" on:click={mobileMenu} src="/images/vegan-burder-menu-svgrepo-com.svg">
     </div>
