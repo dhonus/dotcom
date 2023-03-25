@@ -139,14 +139,14 @@
         </div>
       </a>
     </div>
-    <div class="project" onclick='location.href="https://github.com/dhonus/manga-pet"'>
-    <h3 class="overline">manga.pet.</h3>
-      <p>An electron application to download manga and send it via email to a kindle device.</p>
-      <img src="/images/mangapet.png" alt="manga.pet.">
+    <div class="project" onclick='location.href="https://github.com/dhonus/arcanum"'>
+    <h3 class="overline">Arcanum RSS</h3>
+      <p>A general RSS reader</p>
+      <img src="/images/blog/thumbnails/rss.png" alt="manga.pet.">
       <div class="technologies">
-        <div class="one"> electron </div>
-        <div class="one"> express.js </div>
-        <div class="one"> ejs </div>
+        <div class="one"> Rust </div>
+        <div class="one"> Tauri </div>
+        <div class="one"> Svelte </div>
       </div>
     </div>
   </div>
@@ -171,6 +171,16 @@
       </a>
       <div class="technologies">
         <div class="one"> C++ </div>
+      </div>
+    </div>
+    <div class="project" onclick='location.href="https://github.com/dhonus/manga-pet"'>
+      <h3 class="overline">manga.pet.</h3>
+      <p>An electron application to download manga and send it via email to a kindle device.</p>
+      <img src="/images/mangapet.png" alt="manga.pet.">
+      <div class="technologies">
+        <div class="one"> electron </div>
+        <div class="one"> express.js </div>
+        <div class="one"> ejs </div>
       </div>
     </div>
   </div>

@@ -46,11 +46,11 @@
       <img class="vegan-burger" on:click={mobileMenu} src="/images/vegan-burder-menu-svgrepo-com.svg">
     </div>
     <nav class="navbar" id="navbar">
-      <a href="/" class:active={$page.url.pathname === '/'} on:click={svelteDoesntReload}><img src="/images/home-svgrepo-com.svg"/>Home</a>
-      <a href="https://github.com/dhonus" target="_blank"><img src="/images/github-svgrepo-com.svg"/>Github</a>
-      <a href="/portfolio" class:active={$page.url.pathname === '/portfolio'} on:click={svelteDoesntReload}><img src="/images/lamp-svgrepo-com.svg"/>Portfolio</a>
+      <a href="/" class:active={$page.url.pathname === '/'} on:click={svelteDoesntReload}><img src="/images/home-svgrepo-com.svg" alt="home"/>Home</a>
+      <a href="https://github.com/dhonus" target="_blank"><img src="/images/github-svgrepo-com.svg" alt="github"  />Github</a>
+      <a href="/portfolio" class:active={$page.url.pathname === '/portfolio'} on:click={svelteDoesntReload}><img src="/images/lamp-svgrepo-com.svg" alt="portfolio" />Portfolio</a>
       <!--<a href="/about" class:active={$page.url.pathname === '/about'} on:click={svelteDoesntReload}><img src="/images/faq-svgrepo-com.svg"/>About me</a>-->
-      <a href="/blog" class:active={$page.url.pathname.includes('/blog')} on:click={svelteDoesntReload}><img src="/images/news-svgrepo-com.svg"/>Blog</a>
+      <a href="/blog" class:active={$page.url.pathname.includes('/blog')} on:click={svelteDoesntReload}><img src="/images/news-svgrepo-com.svg" alt="home" />Blog</a>
     </nav>
     <div class="modal-wrapper">
       <Modal show={$modal}>
@@ -69,9 +69,7 @@
   <a target="_blank" href="https://mega.nz/megadrop/BdiWVPiHPpo">
     <button class="footer-megalink">Send Me a File With MEGA</button>
   </a>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400;1,500;1,700&family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </footer>
