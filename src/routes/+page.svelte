@@ -39,10 +39,10 @@
       <h1><span style="font-weight: 700"><span style="color: #853a51;">//</span> Welcome!</span></h1>
       <span class="p-indent">
         <p>My name is <span class="bold overline">Daniel</span> and I am currently a student at
-        <span class="bold overline">VŠB - Technical University of Ostrava</span>, finishing up my Bachelor's degree in Computer Science.
-        I love my major, with particular interest in <span class="bold overline">Linux, webdesign and scripting</span>.
-        Besides this I&nbsp;spend my time listening to music or enjoying a good book.
-        </p><p>Recently, I've been excited about <span class="bold overline">Svelte, FreeBSD and Proxmox</span>.
+        <span class="bold overline">VŠB - Technical University of Ostrava</span>, focusing on my Masters's degree in Computer Science.
+        I love my major, with particular interest in <span class="bold overline">Linux, web technologies and scripting</span>.
+        Besides this I&nbsp;spend my time listening to music, or enjoying a good book.
+        </p><p>Recently, I've been excited about some of my data science courses, <span class="bold overline">Hyprland, Bitwig and Neural Amp Modeler</span>.
         I believe in a free and decentralized internet, simple (KISS) solutions, Free software and open standards.
         </p><p>
         This is my personal website where I document my projects and other things I find interesting. I&nbsp;hope you enjoy your stay!</p>
