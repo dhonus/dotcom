@@ -39,7 +39,7 @@
       <h1><span style="font-weight: 700"><span style="color: #853a51;">//</span> Welcome!</span></h1>
       <span class="p-indent">
         <p>My name is <span class="bold overline">Daniel</span> and I am currently a student at
-        <span class="bold overline">VŠB - Technical University of Ostrava</span>, focusing on my Masters's degree in Computer Science.
+        <span class="bold overline">VŠB - Technical University of Ostrava</span>, focusing on my Master's degree in Computer Science.
         I love my major, with particular interest in <span class="bold overline">Linux, web technologies and scripting</span>.
         Besides this I&nbsp;spend my time listening to music, or enjoying a good book.
         </p><p>Recently, I've been excited about some of my data science courses, <span class="bold overline">Hyprland, Bitwig and Neural Amp Modeler</span>.
