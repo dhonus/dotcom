@@ -1,0 +1,90 @@
+html, body
+	margin: 0
+	padding: 0
+	color: gainsboro
+	background-color: #030303
+	font-family: 'Comfortaa', sans-serif
+	font-size: 16px
+	a
+		color: #fe628e
+		text-decoration: none
+		&:hover
+			text-decoration: underline
+.topbar
+	display: flex
+	flex-direction: row
+	justify-content: left
+	align-items: center
+	gap: 1rem
+	padding: .6rem 1rem 0 1rem
+	.identity a img
+		width: 2rem
+		height: 2rem
+		border-radius: 50%
+		transition: transform 0.3s
+		&:hover
+			transform: scale(1.1)
+	.navbar
+		display: flex
+		flex-direction: row
+		padding: 0 .3rem
+		gap: 1.2rem
+		margin-top: 1rem
+		a
+			display: flex
+			align-items: center
+			gap: .6rem
+			text-decoration: none
+			color: whitesmoke
+			font-size: 1.2rem
+			font-weight: 300
+			margin-bottom: 1rem
+			position: relative
+			&:before, &.active:before
+				box-sizing: border-box
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 65%
+				height: 50%
+				opacity: 0.3
+				transform: scale3d(0,1,1)
+				transform-origin: 0% 50%
+				transition: transform 0.5s
+				transition-timing-function: cubic-bezier(0.2,1,0.3,1)
+			&:hover, &.active
+				cursor: pointer
+				&:before
+					transform: scale3d(1,1,1)
+					transition: transform 0.5s
+					transition-timing-function: cubic-bezier(0.2,1,0.3,1)
+					background: #fe628e
+		img
+			height: 1rem
+
+
+// MAIN AREA
+.main-wrapper
+	padding: 0 1rem
+
+
+// FOOTER
+footer
+	border-top: 1px solid #2e2e2e
+	display: flex
+	flex-direction: column
+	padding: 0 1rem
+	background-color: #030303
+	color: #c5c5c5
+	font-size: 14px
+	font-weight: 300
+	span
+		font-size: 1rem
+		font-weight: 200
+		a
+			text-decoration: none
+			color: #7e7e7e
+			font-weight: 400
+			&:hover
+				text-decoration: underline
