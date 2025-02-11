@@ -3,7 +3,7 @@ title = "Daniel Honus"
 +++
 
 This is my personal website with projects and other things I find interesting.
-If you want to get in touch, feel free to send me an email at [hello@danielhonus.com](hello@danielhonus.com).
+If you want to get in touch, feel free to send me an email at [hello@danielhonus.com](mailto:hello@danielhonus.com).
 
 Check out my [GitHub](https://github.com/dhonus). I have a few interesting projects there. Namely:
 * [jellyfin-tui](https://github.com/dhonus/jellyfin-tui) - A fancy terminal music client for Jellyfin.
