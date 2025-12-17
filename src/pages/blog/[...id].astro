@@ -223,7 +223,14 @@ const tocSections = await getTOCSections(currentPostId)
       )
     }
 
-    <article class="prose col-start-2 max-w-none">
+    <article
+      class="prose col-start-2 max-w-none
+         rounded-xl
+         bg-background/80
+         backdrop-blur-sm
+         border
+         px-8 py-6"
+    >
       <Content />
     </article>
 

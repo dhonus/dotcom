@@ -75,3 +75,33 @@
     @apply border-border outline-ring/50 tracking-tight;
   }
 }
+
+/* base setup */
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background: transparent;
+  position: relative;
+}
+
+
+
+[data-theme='dark'] body::before {
+  content: "";
+  position: fixed;
+  inset: -22vmax;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+          radial-gradient(55vmax 45vmax at 18% 22%, #151F20 0%, transparent 62%),
+          radial-gradient(48vmax 38vmax at 78% 30%, #1D0B09 0%, transparent 60%),
+          radial-gradient(38vmax 42vmax at 60% 78%, #151F20 0%, transparent 62%),
+          radial-gradient(26vmax 22vmax at 32% 78%, rgba(27,22,19,.5) 0%, transparent 65%),
+          radial-gradient(20vmax 18vmax at 92% 88%, rgba(19,18,23,.4) 0%, transparent 70%);
+
+  filter: blur(44px) saturate(118%);
+  opacity: 0.9;
+}
