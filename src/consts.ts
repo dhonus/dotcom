@@ -36,6 +36,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'Email',
   },
   {
+    href: 'https://www.linkedin.com/in/daniel-honus-5166b4361/',
+    label: 'LinkedIn',
+  },
+  {
     href: '/rss.xml',
     label: 'RSS',
   },
