@@ -34,9 +34,9 @@ This gives users the same level of navigation control as if they were on desktop
 
 ### Subposts for hierarchical content organization
 
-The second major feature is something I'm calling "subposts," a way to organize related content in a parent-child hierarchy within your blog. This concept came from when I was writing [this](https://enscribe.dev/blog/japan-retrospective) travel blog post on my personal site, where I essentially wanted a "subpost" for each day of the trip since it was way too long to fit into a single post.
+The second major feature is something I'm calling "subposts," a way to organize related content in a parent-child hierarchy within your log. This concept came from when I was writing [this](https://enscribe.dev/log/japan-retrospective) travel log post on my personal site, where I essentially wanted a "subpost" for each day of the trip since it was way too long to fit into a single post.
 
-Instead of creating separate blog posts in a "series" (and thus clogging up your blog post listings with a bunch of smaller, tangentially-related posts), you can now automatically establish a parent-child relationship between posts by creating a folder for your main topic with an `index.mdx` file as your parent post, then adding additional `.mdx` files in the same folder as subposts. For example, this very post demonstrates the feature by containing two subposts that explore the technical implementation details of each feature. On desktop, we display a `<SubpostsSidebar>{:tsx}` component on the right-hand side of the page that shows a list of all the subposts alongside the parent post:
+Instead of creating separate log posts in a "series" (and thus clogging up your log post listings with a bunch of smaller, tangentially-related posts), you can now automatically establish a parent-child relationship between posts by creating a folder for your main topic with an `index.mdx` file as your parent post, then adding additional `.mdx` files in the same folder as subposts. For example, this very post demonstrates the feature by containing two subposts that explore the technical implementation details of each feature. On desktop, we display a `<SubpostsSidebar>{:tsx}` component on the right-hand side of the page that shows a list of all the subposts alongside the parent post:
 
 <div class="flex gap-4 flex-wrap justify-center [&_img,p,.expressive-code]:m-0">
   <div class="max-w-3xs border">
@@ -47,7 +47,7 @@ Instead of creating separate blog posts in a "series" (and thus clogging up your
 ```bash showLineNumbers={false}
 src/
   content/
-    blog/
+    log/
       mobile-nav-and-subposts/
         index.mdx
         mobile-navigation.mdx
@@ -57,7 +57,7 @@ src/
   </div>
 </div>
 
-The file structure is intuitive: create a folder for your main topic with an `index.mdx` file as your parent post, then add additional `.mdx` files in the same folder as subposts. Astro's file-based routing handles the URL structure automatically, creating paths like `/blog/subposts` for the parent post and `/blog/subposts/mobile-navigation` and `/blog/subposts/subposts` for the subposts.
+The file structure is intuitive: create a folder for your main topic with an `index.mdx` file as your parent post, then add additional `.mdx` files in the same folder as subposts. Astro's file-based routing handles the URL structure automatically, creating paths like `/log/subposts` for the parent post and `/log/subposts/mobile-navigation` and `/log/subposts/subposts` for the subposts.
 
 #### Enhanced navigation patterns
 
@@ -75,7 +75,7 @@ The subposts feature particularly shines for technical content which is meant to
 
 This post itself serves as an example, since you're currently reading the parent post (which I've called the "Index" post in the `<Breadcrumb>{:tsx}` component) and the subposts are the two posts that I've written about the technical implementation details of each feature.
 
-What's great about the way I engineered subposts is that it's fully backwards-compatible with blog posts written before this, so there's no need to define extra frontmatter metadata or manually establish the parent-child relationships between posts. It serves lovely on the <abbr title="Developer Experience">DX</abbr> side as well!
+What's great about the way I engineered subposts is that it's fully backwards-compatible with log posts written before this, so there's no need to define extra frontmatter metadata or manually establish the parent-child relationships between posts. It serves lovely on the <abbr title="Developer Experience">DX</abbr> side as well!
 
 ## Go ahead and read the subposts
 

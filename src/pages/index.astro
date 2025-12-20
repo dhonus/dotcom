@@ -1,5 +1,5 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
+import LogCard from '@/components/LogCard.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import { buttonVariants } from '@/components/ui/button'
@@ -7,7 +7,7 @@ import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getRecentPosts } from '@/lib/data-utils'
 
-const blog = await getRecentPosts(SITE.featuredPostCount)
+const log = await getRecentPosts(SITE.featuredPostCount)
 ---
 
 <Layout class="max-w-3xl">
@@ -24,7 +24,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
         Welcome to my personal site. Its main purpose is a showcase of my work as a software engineer.
       </p>
       <p class="text-muted-foreground text-sm">
-        Feel free to explore my case studies and technical texts in the Blog section and the About page for a list of my most interesting projects.
+        Feel free to explore my case studies and technical texts in the Log section and the About page for a list of my most interesting projects.
       </p>
     </div>
   </section>
@@ -32,16 +32,16 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
     <h2 class="text-2xl font-medium">Latest posts</h2>
     <ul class="flex flex-col gap-y-4">
       {
-        blog.map((post) => (
+        log.map((post) => (
           <li>
-            <BlogCard entry={post} />
+            <LogCard entry={post} />
           </li>
         ))
       }
     </ul>
     <div class="flex justify-center">
       <Link
-        href="/blog"
+        href="/log"
         class={buttonVariants({ variant: 'ghost' }) + ' group'}
       >
         See all posts <span

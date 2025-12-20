@@ -3,7 +3,7 @@ import type { IconMap, SocialLink, Site } from '@/types'
 export const SITE: Site = {
   title: 'Daniel Honus',
   description:
-    'A blog about web development, programming, and technology.',
+    'A log about web development, programming, and technology.',
   href: 'https://danielhonus.com',
   author: 'dhonus',
   locale: 'en-US',
@@ -13,8 +13,8 @@ export const SITE: Site = {
 
 export const NAV_LINKS: SocialLink[] = [
   {
-    href: '/blog',
-    label: 'blog',
+    href: '/log',
+    label: 'log',
   },
   // {
   //   href: '/authors',

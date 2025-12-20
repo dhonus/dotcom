@@ -1,5 +1,5 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
+import LogCard from '@/components/LogCard.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import PageHead from '@/components/PageHead.astro'
 import PaginationComponent from '@/components/ui/pagination'
@@ -29,10 +29,10 @@ const sortedTags = await getSortedTags()
 ---
 
 <Layout class="max-w-3xl">
-  <PageHead slot="head" title="Blog" />
+  <PageHead slot="head" title="Log" />
   <Breadcrumbs
     items={[
-      { label: 'Blog', href: '/blog', icon: 'lucide:library-big' },
+      { label: 'Log', href: '/log', icon: 'lucide:library-big' },
       { label: `Page ${page.currentPage}`, icon: 'lucide:book-copy' },
     ]}
   />
@@ -61,7 +61,7 @@ const sortedTags = await getSortedTags()
           <ul class="flex flex-col gap-4">
             {postsByYear[year].map((post) => (
               <li>
-                <BlogCard entry={post} />
+                <LogCard entry={post} />
               </li>
             ))}
           </ul>
@@ -73,7 +73,7 @@ const sortedTags = await getSortedTags()
   <PaginationComponent
     currentPage={page.currentPage}
     totalPages={page.lastPage}
-    baseUrl="/blog/"
+    baseUrl="/log/"
     client:load
   />
 </Layout>

@@ -30,7 +30,7 @@ One of the more intricate parts of this update was rethinking navigation. The or
 <Callout variant="example">
   Consider this structure:
   ```
-  blog/
+  log/
     getting-started.mdx
     react-tutorial/
       index.mdx
@@ -49,9 +49,9 @@ Here's how we handle this complexity:
 
 ```typescript title="src/lib/data-utils.ts" startLineNumber={40}
 export async function getAdjacentPosts(currentId: string): Promise<{
-  newer: CollectionEntry<'blog'> | null
-  older: CollectionEntry<'blog'> | null
-  parent: CollectionEntry<'blog'> | null
+  newer: CollectionEntry<'log'> | null
+  older: CollectionEntry<'log'> | null
+  parent: CollectionEntry<'log'> | null
 }> {
   const allPosts = await getAllPosts()
 
@@ -60,7 +60,7 @@ export async function getAdjacentPosts(currentId: string): Promise<{
     const parent = allPosts.find((post) => post.id === parentId) || null
 
     // Get all sibling subposts
-    const posts = await getCollection('blog')
+    const posts = await getCollection('log')
     const subposts = posts
       .filter(
         (post) =>
@@ -71,13 +71,13 @@ export async function getAdjacentPosts(currentId: string): Promise<{
       .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
 
     const currentIndex = subposts.findIndex((post) => post.id === currentId)
-    
+
     return {
-      newer: currentIndex < subposts.length - 1 
-        ? subposts[currentIndex + 1] 
+      newer: currentIndex < subposts.length - 1
+        ? subposts[currentIndex + 1]
         : null,
-      older: currentIndex > 0 
-        ? subposts[currentIndex - 1] 
+      older: currentIndex > 0
+        ? subposts[currentIndex - 1]
         : null,
       parent,
     }
@@ -89,8 +89,8 @@ export async function getAdjacentPosts(currentId: string): Promise<{
 
   return {
     newer: currentIndex > 0 ? parentPosts[currentIndex - 1] : null,
-    older: currentIndex < parentPosts.length - 1 
-      ? parentPosts[currentIndex + 1] 
+    older: currentIndex < parentPosts.length - 1
+      ? parentPosts[currentIndex + 1]
       : null,
     parent: null,
   }
@@ -103,26 +103,26 @@ As a TL;DR, subposts should only navigate among siblings and should be able to g
 
 - The breadcrumb component required careful thought to handle three distinct cases:
 
-    ```astro title="src/pages/blog/[...id].astro" startLineNumber={70}
+    ```astro title="src/pages/log/[...id].astro" startLineNumber={70}
     <Breadcrumbs
       items={[
-        { href: '/blog', label: 'Blog', icon: 'lucide:library-big' },
+        { href: '/log', label: 'Log', icon: 'lucide:library-big' },
         ...(isCurrentSubpost && parentPost
           ? [
               {
-                href: `/blog/${parentPost.id}`,
+                href: `/log/${parentPost.id}`,
                 label: parentPost.data.title,
                 icon: 'lucide:book-open',
               },
               {
-                href: `/blog/${currentPostId}`,
+                href: `/log/${currentPostId}`,
                 label: post.data.title,
                 icon: 'lucide:file-text',
               },
             ]
           : [
               {
-                href: `/blog/${currentPostId}`,
+                href: `/log/${currentPostId}`,
                 label: post.data.title,
                 icon: 'lucide:book-open-text',
               },
@@ -133,18 +133,18 @@ As a TL;DR, subposts should only navigate among siblings and should be able to g
 
     We append `-text` to `book-open` or `file` (for parent posts and subposts, respectively) to indicate the active post by differentiating it from inactive icons which would lack the text within the icon.
 
-- The main blog listing (alongside other listings, e.g. filtering by tags, filtering by author) should exclude subposts to avoid cluttering the feed:
+- The main log listing (alongside other listings, e.g. filtering by tags, filtering by author) should exclude subposts to avoid cluttering the feed:
 
     ```typescript title="src/lib/data-utils.ts" startLineNumber={7}
-    export async function getAllPosts(): Promise<CollectionEntry<'blog'>[]> {
-    const posts = await getCollection('blog')
+    export async function getAllPosts(): Promise<CollectionEntry<'log'>[]> {
+    const posts = await getCollection('log')
     return posts
         .filter((post) => !post.data.draft && !isSubpost(post.id))
         .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
     }
     ```
 
-    Without this filter, your blog listing would show every subpost as a top-level entry, defeating the purpose of hierarchical organization.
+    Without this filter, your log listing would show every subpost as a top-level entry, defeating the purpose of hierarchical organization.
 
 - Desktop and mobile require fundamentally different approaches for displaying the subpost hierarchy. On desktop, we have the luxury of a persistent sidebar. On mobile, screen real estate demands integration with the sticky header system. This required careful slot management in the top-level `Layout.astro`:
 

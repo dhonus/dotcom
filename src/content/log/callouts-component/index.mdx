@@ -14,11 +14,11 @@ import { Icon } from 'astro-icon/components'
 
 This new version of astro-erudite, v1.5.0, introduces our first content-based component: the callout! I was a bit hesitant about adding this component because, frankly, the entire philosophy behind this project was to be as minimalistic as possible—I wanted to simply provide boilerplate to remove the "busy work" factor that often takes away from the writing process.
 
-However, just based on some blog posts I've seen that use this template, I felt like there would be a universal desire just to have this component around in the case where it'd be needed. The primary inspiration came when user [@rezaarezvan](https://github.com/rezaarezvan) sent in a PR to add their site, [rezaarezvan.com](https://rezaarezvan.com), to the examples section in the README. They had years upon years of accumulated notes and resources on their site, most of which were in the form of LaTeX-style academic content that requires "blocks" for things like definitions, theorems, and proofs. I sent in an encouraging reply to the PR and then started building the component:
+However, just based on some log posts I've seen that use this template, I felt like there would be a universal desire just to have this component around in the case where it'd be needed. The primary inspiration came when user [@rezaarezvan](https://github.com/rezaarezvan) sent in a PR to add their site, [rezaarezvan.com](https://rezaarezvan.com), to the examples section in the README. They had years upon years of accumulated notes and resources on their site, most of which were in the form of LaTeX-style academic content that requires "blocks" for things like definitions, theorems, and proofs. I sent in an encouraging reply to the PR and then started building the component:
 
-> [[@jktrn]](https://github.com/jktrn/astro-erudite/pull/29#issuecomment-2814894034) your blog posts are literally insane btw @rezaarezvan how have you written multiple textbooks worth of educational resources???
+> [[@jktrn]](https://github.com/jktrn/astro-erudite/pull/29#issuecomment-2814894034) your log posts are literally insane btw @rezaarezvan how have you written multiple textbooks worth of educational resources???
 >
-> i think i might add latex-style theorem/lemma/corollary/def/proof/eg/ex/remark blocks to astro-erudite so i can accommodate for these academia-style blogs, like e.g. for exercises it'd just be a component with an expandable section to hide the answer
+> i think i might add latex-style theorem/lemma/corollary/def/proof/eg/ex/remark blocks to astro-erudite so i can accommodate for these academia-style logs, like e.g. for exercises it'd just be a component with an expandable section to hide the answer
 
 ### How does it work?
 
@@ -171,9 +171,9 @@ As such, if you feel like there's any variant that you're missing, it's insanely
 
 ### How do I use these?
 
-Within any `src/content/blog/**/*.mdx` file, you can now use the `Callout` component by importing it like so underneath your frontmatter:
+Within any `src/content/log/**/*.mdx` file, you can now use the `Callout` component by importing it like so underneath your frontmatter:
 
-```mdx title="src/content/blog/callouts-component/index.mdx" add={10}
+```mdx title="src/content/log/callouts-component/index.mdx" add={10}
 ---
 title: 'v1.5.0: “A Callout Component for Nerds”'
 description: 'A quick update introduces our first content-based component: the callout!'
@@ -272,9 +272,9 @@ These are what the generic callouts look like (of course, all the text is made u
 
 <Callout title="Productivity enhancement" variant="tip">
   You can quickly format your code by pressing <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> (Windows/Linux) or <kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>F</kbd> (Mac).
-  
+
   Additional shortcuts include:
-  
+
   | Action | Windows/Linux | Mac |
   | ------ | ------------- | --- |
   | Search | <kbd>Ctrl</kbd> + <kbd>F</kbd> | <kbd>Cmd</kbd> + <kbd>F</kbd> |
@@ -284,7 +284,7 @@ These are what the generic callouts look like (of course, all the text is made u
 
 <Callout title="Cross-browser compatibility issues" variant="warning">
   This API is **not supported** in Internet Explorer and has limited support in older browsers. Make sure to include appropriate polyfills.
-  
+
   ```js title="polyfill.js"
   if (!Object.fromEntries) {
     Object.fromEntries = function(entries) {
@@ -296,20 +296,20 @@ These are what the generic callouts look like (of course, all the text is made u
     };
   }
   ```
-  
+
   See the [Browser Compatibility Table](#) for detailed information.
 </Callout>
 
 <Callout title="Critical data loss risk" variant="danger">
   Running this command will **permanently delete** all files in your current directory. Make sure to back up important data before proceeding.
-  
+
   ```bash title="danger.sh"
   # This will delete everything in the current directory
   rm -rf ./*
   # Safer alternative with confirmation
   rm -ri ./*
   ```
-  
+
   This operation cannot be undone and recovery tools may not be able to restore your data.
 </Callout>
 
@@ -319,12 +319,12 @@ These are what the generic callouts look like (of course, all the text is made u
   1. The `configure(){:js}` method now returns a Promise
   2. Authentication requires an API key object instead of a string
   3. Event handlers use a new callback pattern
-  
+
   A migration example looks like the following:
   ```diff lang="js"
   - app.configure("api-key-string");
   + await app.configure({ key: "api-key-string", version: "2.0" });
-  
+
   - app.on('event', callback);
   + app.on('event', { handler: callback, options: { once: true } });
   ```
@@ -336,7 +336,7 @@ Like I mentioned before, some of these variants are meant to be nested within ea
 
 <Callout title="Continuous function" variant="definition">
   A function $f: X \rightarrow Y$ between topological spaces is continuous if for every open set $V \subseteq Y$, the preimage $f^{-1}(V) \subseteq X$ is open in $X$.
-  
+
   <Callout title="Equivalent formulations" variant="explanation">
     For metric spaces, continuity can be characterized by: $\forall \varepsilon > 0, \exists \delta > 0$ such that $d_X(x,y) < \delta \implies d_Y(f(x),f(y)) < \varepsilon$. This captures the intuition that points close to each other in $X$ map to points close to each other in $Y$.
   </Callout>
@@ -347,23 +347,23 @@ Like I mentioned before, some of these variants are meant to be nested within ea
   $$
     \lim_{n \to \infty} P\left(\left|\frac{1}{n}\sum_{i=1}^{n}X_i - \mu\right| > \varepsilon\right) = 0
   $$
-  
+
   <Callout title="Proof" variant="proof">
     We'll prove this using Chebyshev's inequality. Let $S_n = \sum_{i=1}^{n}X_i$ and $\sigma^2 = \text{Var}(X_i)$. By Chebyshev's inequality:
     $$
       P\left(\left|\frac{S_n}{n} - \mu\right| \geq \varepsilon\right) \leq \frac{\text{Var}(S_n/n)}{\varepsilon^2}
     $$
-    
+
     Since the variables are independent, we have:
     $$
       \text{Var}(S_n/n) = \frac{\text{Var}(S_n)}{n^2} = \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n}
     $$
-    
+
     Substituting this into our inequality:
     $$
       P\left(\left|\frac{S_n}{n} - \mu\right| \geq \varepsilon\right) \leq \frac{\sigma^2}{n\varepsilon^2}
     $$
-    
+
     As $n \to \infty$, the right side approaches 0, which proves the theorem.
   </Callout>
 </Callout>
@@ -373,23 +373,23 @@ Like I mentioned before, some of these variants are meant to be nested within ea
   $$
     \lim_{n \to \infty} \int f_n \, d\mu = \int f \, d\mu
   $$
-  
+
   <Callout title="Proof" variant="proof">
     Let $g_n = f_n \cdot \chi_E$ where $E = \{x : f(x) < \infty\}$. By Fatou's lemma:
     $$
       \int f \, d\mu = \int \lim_{n \to \infty} g_n \, d\mu \leq \liminf_{n \to \infty} \int g_n \, d\mu = \liminf_{n \to \infty} \int f_n \, d\mu
     $$
-    
+
     For the reverse inequality, note that $f_n \leq f$ for all $n$, so $\int f_n \, d\mu \leq \int f \, d\mu$. Taking the limit:
     $$
       \limsup_{n \to \infty} \int f_n \, d\mu \leq \int f \, d\mu
     $$
-    
+
     Combining these inequalities:
     $$
       \int f \, d\mu \leq \liminf_{n \to \infty} \int f_n \, d\mu \leq \limsup_{n \to \infty} \int f_n \, d\mu \leq \int f \, d\mu
     $$
-    
+
     Therefore, $\lim_{n \to \infty} \int f_n \, d\mu = \int f \, d\mu$.
   </Callout>
 </Callout>
@@ -398,7 +398,7 @@ I'll add this little subgenre of variant called "example-based" callouts that ha
 
 <Callout title="Finding the derivative of a product function" variant="exercise">
   Calculate the derivative of $f(x) = x^3 \sin(x)$ using the product rule.
-  
+
   <Callout variant="answer" defaultOpen={false}>
     $$
       \frac{d}{dx}[x^3 \sin(x)] = 3x^2 \sin(x) + x^3 \cos(x)
@@ -408,15 +408,15 @@ I'll add this little subgenre of variant called "example-based" callouts that ha
 
 <Callout title="Convergence of arithmetic means" variant="problem">
   Prove that if a sequence $(a_n)$ converges to $L$, then the sequence of arithmetic means $(\frac{a_1 + a_2 + \ldots + a_n}{n})$ also converges to $L$.
-  
+
   <Callout title="Detailed proof" variant="solution">
     Let $\varepsilon > 0$ be given. Since $(a_n)$ converges to $L$, there exists $N \in \mathbb{N}$ such that $|a_n - L| < \frac{\varepsilon}{2}$ for all $n \geq N$. Let $S_n = \frac{a_1 + a_2 + \ldots + a_n}{n}$ be the sequence of arithmetic means.
-    
+
     We can split $S_n$ as follows:
     $$
     S_n = \frac{a_1 + a_2 + \ldots + a_N + a_{N+1} + \ldots + a_n}{n}
     $$
-    
+
     For $n > N$, we have:
     $$
     \begin{align*}
@@ -426,17 +426,17 @@ I'll add this little subgenre of variant called "example-based" callouts that ha
       &\leq \frac{|a_1 - L| + |a_2 - L| + \ldots + |a_N - L| + |a_{N+1} - L| + \ldots + |a_n - L|}{n}
     \end{align*}
     $$
-    
+
     Let $M = \max\{|a_1 - L|, |a_2 - L|, \ldots, |a_N - L|\}$. Then:
     $$
       |S_n - L| \leq \frac{NM + (n-N)\frac{\varepsilon}{2}}{n} = \frac{NM}{n} + \frac{n-N}{n} \cdot \frac{\varepsilon}{2}
     $$
-    
+
     As $n \to \infty$, $\frac{NM}{n} \to 0$ and $\frac{n-N}{n} \to 1$. So for sufficiently large $n$, we have:
     $$
       |S_n - L| < \varepsilon
     $$
-    
+
     Therefore, the sequence of arithmetic means converges to $L$.
   </Callout>
 </Callout>

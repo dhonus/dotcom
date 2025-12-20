@@ -16,7 +16,7 @@ I recently found myself caught between two syntax highlighting packages that I a
 The primary issue was that Expressive Code doesn't support inline syntax highlighting, which is non-negotiable for me since I need my inline code snippets to look as good as my code blocks (so I could do stuff like `console.log("Hello, world!".split('').reverse().join('')){:js}`). So I opened a feature request at [expressive-code/expressive-code#250](https://github.com/expressive-code/expressive-code/issues/250) and the maintainer seemed interested, saying they'd get around to it eventually. Implementing this feature is a lot easier said than done though, and I summarized it well in another thread:
 
 > [@jktrn](https://github.com/rehype-pretty/rehype-pretty-code/issues/247#issuecomment-2619869436): [...] expressive-code is already interested in implementing inline code support, but it would be a bit nuanced to add since it has to:
-> 
+>
 > - allow existing plugins to continue working normally with block-level code (without breaking changes),
 > - enable new plugins to explicitly declare support for inline code,
 > - and provide ways for plugins to distinguish between inline and block-level code processing.
@@ -36,11 +36,11 @@ Fast forward a few months, and user [@kelvindecosta](https://github.com/kelvinde
 After I replied that I hadn't figured out a workaround yet, they sent me a brilliantly hacky solution a couple days later:
 
 > [[@kelvindecosta]](https://github.com/rehype-pretty/rehype-pretty-code/issues/247#issuecomment-2619666231): Hey again @jktrn, I have found an unconventional way to achieve this.
-> 
+>
 > If you're using pnpm or bun, you can use their patch functionality to customize the contents of the `node_modules/rehype-pretty-code` package.
-> 
+>
 > I only recently learned about this feature, and it is a good workaround for the time being. Here are the steps:
-> 
+>
 > 1. Run `pnpm patch rehype-pretty-code`. This will instruct you to edit the files in a certain directory.
 > 2. Patch out the `isBlockCode{:js}` function to always return `false{:js}`. This will instruct the plugin to not process any block code elements.
 > 3. Run `pnpm patch-commit <path/to/files>`. This will create a nice patches folder with the right changes.
@@ -82,7 +82,7 @@ This simple modification forces rehype-pretty-code to completely ignore block co
 
 ## Please don't perform surgery on your node_modules
 
-Absolutely do not do this for production sites (your personal blog does not count =￣ω￣=). Directly patching node modules is generally discouraged because patches can break with updates and create maintenance headaches down the road.
+Absolutely do not do this for production sites (your personal log does not count =￣ω￣=). Directly patching node modules is generally discouraged because patches can break with updates and create maintenance headaches down the road.
 
 But sometimes, when you're working at the bleeding edge of web development, temporary solutions like this become necessary. The better approach would be to just wait for Expressive Code to implement inline syntax highlighting. But, since it'll take a while for reasons aforementioned, I'll stick with my janky solution. This patch buys me time until either rehype-pretty-code gets maintained again and implements the feature properly, or Expressive Code adds inline code support.
 

@@ -121,8 +121,8 @@ export const SITE: Site = {
 
 export const NAV_LINKS: SocialLink[] = [
   {
-    href: '/blog',
-    label: 'blog',
+    href: '/log',
+    label: 'log',
   },
   // ...
 ]
@@ -178,9 +178,9 @@ Favicons are generated using [RealFaviconGenerator](https://realfavicongenerator
 
 ## Adding content
 
-### Blog posts
+### Log posts
 
-Add new blog posts as MDX files in the `src/content/blog/` directory. Use the following frontmatter structure:
+Add new log posts as MDX files in the `src/content/log/` directory. Use the following frontmatter structure:
 
 ```yml
 ---
@@ -194,7 +194,7 @@ draft: false
 ---
 ```
 
-The blog post schema is defined as follows:
+The log post schema is defined as follows:
 
 | Field         | Type (Zod)      | Requirements                                                                                                                                                                    | Required |
 | ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -209,7 +209,7 @@ The blog post schema is defined as follows:
 
 ### Authors
 
-Add author information in `src/content/authors/` as Markdown files. A file named `[author-name].md` can be associated with a blog post if `"author-name"` (the id) is added to the `authors` field:
+Add author information in `src/content/authors/` as Markdown files. A file named `[author-name].md` can be associated with a log post if `"author-name"` (the id) is added to the `authors` field:
 
 ```yml
 ---
