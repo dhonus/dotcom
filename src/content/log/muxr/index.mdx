@@ -37,18 +37,18 @@ I wanted to make sure that I could invoke and control the model, extract progres
 The prototype itself worked very well, the inference speed was also quite good on my mid-range laptop (with an integrated GPU no less). The real problems only started to appear after I tried to embed this script into something that could be widely distributed to other machines.
 
 My hard requirement for the final product was that it should be very **easy to deploy and run** for an end user (and myself). This meant:
-* no runtime Python dependency for the end user
-* no virtualenv management on the target machine
-* progress reporting (percentages) exposed to rust / UI
-* fully buildable via CI (Github actions)
-* ideally cross-platform (linux/windows/macos)
+* No runtime Python dependency for the end user
+* No virtualenv management on the target machine
+* Progress reporting (percentages) exposed to rust / UI
+* Fully buildable via CI (Github actions)
+* Ideally cross-platform (linux/windows/macos)
 
 This immediately rules out "shell script that runs python" approach, as the user would need to have a working python environment with all dependencies installed.
 
 ### What worked: Calling Demucs via CLI
 The core of muxr is the invocation of Demucs itself. The model itself is exposed as a command line tool via the `demucs.separate` module. The simplest way to invoke it is like so:
 ```bash
-python3 -m demucs.separate -n hybrid_transformer path/to/audiofile.wav
+python3 -m demucs.separate -n htdemucs path/to/audiofile.wav
 ````
 
 This of course works, but for an application we need more control over the input/output paths, progress reporting, and various model parameters. A more usable python wrapper looks like this:
@@ -144,30 +144,30 @@ This is a lot of work, and while I believe it would be possible to reimplement a
 At this point it became clear that the failure mode was not any specific tool, but the assumption that this class of ML workload could be trivially packaged into a desktop binary at all. The core issue was not Demucs, not Python (though truthfully it doesn't make things easy in this case), not even ML packaging necessarily. It was **optimizing fully for a native binary distribution** in a space that is not well suited for it. If the only reliable way to run a dependency is by rewriting significant parts of its pre- and post-processing logic, then the cost-benefit analysis quickly turns negative.
 
 Some ways to reframe this problem:
-* instead of asking "how do I hide Python inside a desktop app", ask "what is the convenient way to make Demucs available locally"
+* Instead of asking "how do I hide Python inside a desktop app", ask "what is the convenient way to make Demucs available locally"
 * Demucs behaves correctly only when treated as a process, not a library
-* process isolation is important and useful here
-* the runtime complexity is manageable as long as it stays on the backend and not in the same package as the UI
-* a stable deployment is more valuable than a native desktop user interface
+* Process isolation is important and useful here
+* The runtime complexity is manageable as long as it stays on the backend and not in the same package as the UI
+* A stable deployment is more valuable than a native desktop user interface
 
 Once framed this way, the solution became more obvious. Instead of embedding Demucs, python and user interface into a single binary, it could simply be exposed as an API service. This has several advantages:
 * Demucs runs as intended, as an isolated process
-* the backend handles all python dependencies and environment management
-* the app can be Dockerized and easy to deploy
+* The backend handles all python dependencies and environment management
+* The app can be Dockerized and easy to deploy
 
 Of course this comes with tradeoffs:
-* no single native desktop binary
-* requires running a local server
-* complex to manage (self-hosted backend + frontend)
+* No single native desktop binary
+* Requires running a local server
+* Complex to manage (self-hosted backend + frontend)
 
 These tradeoffs are reasonable given the constraints of this project and time complexity of packaging the model.
 
 ## Final architecture
 The final architecture of muxr is a web application with a FastAPI backend and a Svelte frontend. The backend is responsible for:
-* managing Demucs invocation as a subprocess, multiple requests at a time are possible
-* accepting audio file uploads via HTTP
-* reporting progress to the frontend via a simple polling API
-* packaging the output stems into a zip file for download
+* Managing Demucs invocation as a subprocess, multiple requests at a time are possible
+* Accepting audio file uploads via HTTP
+* Reporting progress to the frontend via a simple polling API
+* Packaging the output stems into a zip file for download
 
 The API itself ended up quite simple, with just 2 endpoints:
 * `POST /separate` - accepts an audio file upload (or youtube url), starts a Demucs separation job in the background, returns a session ID
