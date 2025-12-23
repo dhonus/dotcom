@@ -18,6 +18,14 @@ The original goal for this project was a standalone application using the Tauri 
 and ML model in a single binary was not feasible. This case study focuses on the backend and deployment architecture decisions that followed,
 including why I abandoned the desktop-first approach in favor of an API based web application.
 
+#### TL;DR
+* I attempted to ship Demucs as a desktop app (Tauri + Python).
+* Python packaging + ML runtime constraints made this impractical.
+* I pivoted to a FastAPI backend + Docker deployment.
+* Result: reliable self-hosted stem separation tool.
+
+Key takeaway: treat heavy ML tooling as isolated processes, not embedded binaries. Centralize complexity on the backend, not in the UI package.
+
 <Callout title="Scope & Attribution" variant="note">
 This case study focuses on backend architecture and deployment decisions. The frontend was implemented **by a collaborator**. I defined the workflow, gave technical guidance, fixed some styling issues, added linting and basic project hygiene, and handled Dockerization. I didn’t own the UI/UX design end-to-end.
 </Callout>
