@@ -154,7 +154,7 @@ Of course this comes with tradeoffs:
 
 These tradeoffs are reasonable given the constraints of this project and time complexity of packaging the model.
 
-### Final architecture
+## Final architecture
 The final architecture of muxr is a web application with a FastAPI backend and a Svelte frontend. The backend is responsible for:
 * managing Demucs invocation as a subprocess, multiple requests at a time are possible
 * accepting audio file uploads via HTTP
@@ -167,17 +167,17 @@ The API itself ended up quite simple, with just 2 endpoints:
 
 I chose FastAPI because I was already familiar with it, I have used it in my bachelor thesis, and it is very pleasant to work with. It supports asynchronous request handling, background tasks, and has great documentation.
 
-#### Demo
+### Demo
 Here is a short demo of using muxr to separate a music track into stems. UI shown for context; this case study focuses on backend and deployment decisions.
 <video controls muted loop>
   <source src="/assets/muxr-showcase.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
-#### Implementation details
+### Implementation details
 
 The script itself is intentionally minimal and only does what is necessary to run Demucs reliably and report progress.
-##### Process model and job lifecycle
+#### Process model and job lifecycle
 Each separation request is handled as a background task that spawns a new subprocess running Demucs. Jobs are isolated as separate processes and identified with a randomly generated session ID. This ID is used to track progress and also on disk to store input/output files.
 
 Rather than tracking progress in memory, each job writes its state to its own output directory.
@@ -187,7 +187,7 @@ Rather than tracking progress in memory, each job writes its state to its own ou
 4. `last_poll.txt` - timestamp of the last client poll, used to detect abandoned jobs using a simple heartbeat mechanism
 5. `result.zip` - final output zip file containing separated stems
 
-##### Progress extraction and polling
+#### Progress extraction and polling
 
 Demucs does not provide a structured API for progress reporting, as we've established - it is a CLI tool. To work around this, I implemented a simple progress extraction mechanism by parsing the stderr output of the Demucs subprocess in real time.
 
@@ -238,13 +238,13 @@ for line in process.stderr:
 
 </Callout>
 
-##### Heartbeat based cleanup
+#### Heartbeat based cleanup
 To avoid orphaned jobs consuming resources, a simple heartbeat mechanism is implemented. Each job writes a timestamp to `last_poll.txt` whenever the client polls for progress. A separate watcher thread periodically checks this timestamp. If polling stops for too long, a job is assumed to be abandoned and the subprocess is terminated.
 
-##### Output packaging
+#### Output packaging
 Once a job completes successfully, the separated stems are packaged into a zip file for download by the client. This is done using Python's built-in `zipfile` module.
 
-#### Docker
+## Docker
 To achieve the goal of easy deployment, the entire application is packaged as a Docker Compose setup with 2 services: `api` and `web`. The API service runs the FastAPI backend, while the web service serves the frontend Svelte application.
 ### Docker Compose
 ```yaml title="docker-compose.yml"
