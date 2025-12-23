@@ -30,7 +30,7 @@
     @apply text-foreground text-base leading-7;
 
     :where(p):not(:where(.not-prose, .not-prose *)) {
-      @apply text-foreground/80 my-5;
+      @apply text-foreground/80 my-3;
     }
 
     :where(h1, h2, h3, h4, h5, h6):not(:where(.not-prose, .not-prose *)) {
@@ -55,7 +55,7 @@
     }
 
     :where(h4):not(:where(.not-prose, .not-prose *)) {
-      @apply mt-7 mb-3 text-lg;
+      @apply mt-4 mb-3 text-lg;
     }
 
     :where(h5, h6):not(:where(.not-prose, .not-prose *)) {
@@ -71,7 +71,7 @@
     }
 
     :where(ul):not(:where(.not-prose, .not-prose *)) {
-      @apply marker:text-foreground/30 my-5 ml-6 list-disc [&>li]:mt-2;
+      @apply marker:text-foreground/30 my-3 ml-6 list-disc [&>li]:mt-2;
     }
 
     :where(ol):not(:where(.not-prose, .not-prose *)) {

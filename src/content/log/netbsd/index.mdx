@@ -1,15 +1,23 @@
 ---
-title: 'Useful NetBSD commands to get working installation with DWM'
-description: 'A collection of commands and tips to help set up a working NetBSD installation with DWM, including fixing SSL errors, setting up package mirrors, and compiling DWM.'
+title: 'Useful NetBSD commands to get a working DWM installation'
+description: 'Notes and commands for setting up a usable NetBSD desktop with DWM.'
 date: 2022-12-16
-tags: ['netbsd', 'dwm', 'installation']
+tags: ['bsd']
 authors: ['dhonus']
 ---
 
-# Useful NetBSD commands to get working installation with DWM
-I might need this in the future, really don&rsquo;t want to figure it out again and it&rsquo;s good website-filler.
-Some things are done quite differently to freebsd and thanks to its smaller userbase it can be hard to get good search results. Here I present some notes I have taken over the course of time I have spent using NetBSD. Also just before we start, note my system specs and make changes to the commands accordingly. i5 6600 (4 cores); AMD RX 570; 8G of ram; no wifi card; B150M-D3H motherboard hence its ethernet.
-To avoid typing out all these commands, I made a script to automate them. But you can&rsquo;t have it. It&rsquo;s mine. All jokes aside, I haven&rsquo;t tested it and it would probably just break your installation. The contents, however, are more or less what you will find in this guide.
+# Useful NetBSD commands to get a working DWM installation
+
+These are mostly notes for myself. NetBSD does a lot of things differently compared to Linux or even FreeBSD, and with a smaller user base it’s often harder to find clear answers when something breaks. I don’t want to rediscover this every time, so this is written down here.
+
+At the time I used this setup, the machine was: i5-6600 (4 cores), AMD RX 570, 8 GB RAM, wired Ethernet only. Adjust paths and packages if your setup differs.
+
+I did throw together a script to automate most of this, but it was never properly tested and would probably break more than it fixes. The commands below are the important parts, without pretending this is a one-click solution.
+
+## Fixing SSL errors with curl and git
+
+On a fresh NetBSD install, TLS often doesn’t work out of the box because root certificates aren’t installed.
+
 
 ## To fix SSL errors with curl and git
 ```shell
@@ -17,18 +25,19 @@ $ pkgin in mozilla-rootcerts
 $ mozilla-rootcerts install
 ```
 
-## Good website to get sauce
-[paedebucher.ch](https://paedubucher.ch/articles/2020-08-11-freebsd-on-the-desktop.html)
+## Reference material
+This article was useful as general background when setting up a BSD desktop:
+https://paedubucher.ch/articles/2020-08-11-freebsd-on-the-desktop.html
 
-## Get a good mirror
-Or watch your computer download at speeds of the 1980s. Most mirrors are pretty horrid... Anyway, you need to run these nice commands.
+## Choosing a usable package mirror
+Default mirrors can be very slow depending on location. Explicitly setting PKG_PATH improves reliability.
 ```shell
  $ PKG_PATH="https://cdn.NetBSD.org/pub/pkgsrc/packages/NetBSD/$(uname -p)/$(uname -r | cut -d_ -f1)/All"
  $ export PKG_PATH
  $ pkg_add -v pkgin
 ```
 
-The following commands after having pkgin installed
+After installing pkgin, set up the repository list:
 ```shell
  $ mkdir -p /usr/pkg/etc/pkgin
  $ touch /usr/pkg/etc/pkgin/repositories.conf
@@ -48,7 +57,7 @@ $ pkgin update
 ```
 
 ## dwm won't compile
-This is to be expected, GNU/Linux and BSDs are different systems. Thankfully the suckless devs, [although apparently Nazis](https://news.ycombinator.com/item?id=20845633), are really good programmers and only a few things will have to change.
+This is expected. DWM targets Linux by default, and BSDs differ in filesystem layout.
 ```shell
 $ cd dwm
 $ make
