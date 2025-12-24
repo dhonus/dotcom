@@ -144,8 +144,8 @@ This is a lot of work, and while I believe it would be possible to reimplement a
 At this point it became clear that the failure mode was not any specific tool, but the assumption that this class of ML workload could be trivially packaged into a desktop binary at all. The core issue was not Demucs, not Python (though truthfully it doesn't make things easy in this case), not even ML packaging necessarily. It was **optimizing fully for a native binary distribution** in a space that is not well suited for it. If the only reliable way to run a dependency is by rewriting significant parts of its pre- and post-processing logic, then the cost-benefit analysis quickly turns negative.
 
 Some ways to reframe this problem:
-* Instead of asking "how do I hide Python inside a desktop app", ask "what is the convenient way to make Demucs available locally"
-* Demucs behaves correctly only when treated as a process, not a library
+* Instead of asking "how do I hide Python inside a desktop app?", ask "what is a convenient way to make Demucs available locally?"
+* Consider that Demucs behaves correctly only when treated as a process, not a library
 * Process isolation is important and useful here
 * The runtime complexity is manageable as long as it stays on the backend and not in the same package as the UI
 * A stable deployment is more valuable than a native desktop user interface
